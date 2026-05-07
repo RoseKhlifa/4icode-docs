@@ -13,7 +13,7 @@ export default sidebar({
           link: "intro.md",
         },
         {
-          text: "充值与套餐",
+          text: "充值",
           icon: "fluent-mdl2:money",
           link: "recharge.md",
         },
@@ -70,6 +70,11 @@ export default sidebar({
           text: "Curl调用示例",
           icon: "si:pull-request-fill",
           link: "curl.md",
+        },
+        {
+          text: "CherryStudio",
+          icon: "/cherrystudio.png",
+          link: "cherrystudio.md",
         },
         {
           text: "OpenCode",
