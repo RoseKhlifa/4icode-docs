@@ -11,8 +11,6 @@ footer: false
 
 `POST /v1/images/generations`
 
-这个接口更像 OpenAI 原生图片生成接口，返回结果直接给 URL。
-
 > 统一鉴权头：`Authorization: Bearer sk-xxxxx`
 
 ## 请求参数

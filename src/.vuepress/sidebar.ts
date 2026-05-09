@@ -79,16 +79,6 @@ export default sidebar({
           expanded: false,
           children: [
             {
-              text: "nano-banana 接口",
-              icon: "material-symbols:image-outline",
-              link: "draw/nano-banana.md",
-            },
-            {
-              text: "gpt-image-2 接口",
-              icon: "material-symbols:image",
-              link: "draw/gpt-image-2.md",
-            },
-            {
               text: "/v1/chat/completions",
               icon: "hugeicons:chat-gpt",
               link: "draw/chat-completions.md",

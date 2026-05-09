@@ -13,8 +13,6 @@ footer: false
 
 | 接口 | 用途 |
 | --- | --- |
-| [nano-banana 接口](./nano-banana.md) | 通用绘图、参考图绘制、异步生成 |
-| [gpt-image-2 接口](./gpt-image-2.md) | OpenAI 风格的绘图接口，支持像素尺寸 |
 | [/v1/chat/completions](./chat-completions.md) | 聊天接口，支持带图提问 |
 | [/v1/images/generations](./images-generations.md) | OpenAI 原生图片生成接口 |
 
