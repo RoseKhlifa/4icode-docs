@@ -75,6 +75,8 @@ export default sidebar({
           text: "画图接口",
           icon: "material-symbols:draw-outline",
           prefix: "draw/",
+          collapsible: true,
+          expanded: false,
           children: [
             {
               text: "nano-banana 接口",
