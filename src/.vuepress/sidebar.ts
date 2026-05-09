@@ -74,29 +74,29 @@ export default sidebar({
         {
           text: "画图接口",
           icon: "material-symbols:draw-outline",
-          prefix: "draw/",
+          link: "draw/",
           collapsible: true,
           expanded: false,
           children: [
             {
               text: "nano-banana 接口",
               icon: "material-symbols:image-outline",
-              link: "nano-banana.md",
+              link: "draw/nano-banana.md",
             },
             {
               text: "gpt-image-2 接口",
               icon: "material-symbols:image",
-              link: "gpt-image-2.md",
+              link: "draw/gpt-image-2.md",
             },
             {
               text: "/v1/chat/completions",
               icon: "hugeicons:chat-gpt",
-              link: "chat-completions.md",
+              link: "draw/chat-completions.md",
             },
             {
               text: "/v1/images/generations",
               icon: "material-symbols:image",
-              link: "images-generations.md",
+              link: "draw/images-generations.md",
             },
           ],
         },
