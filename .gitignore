@@ -21,3 +21,6 @@ Thumbs.db
 .yarn/install-state.gz
 .yarn/build-state.yml
 .yarn/unplugged/
+
+
+tmp/
