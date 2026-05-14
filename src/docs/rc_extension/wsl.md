@@ -85,7 +85,7 @@ nvm use 22
 > 然后通过 npm 安装 Codex：
 
 ```bash
-npm install -g openai@codex
+npm install -g @openai/codex
 ```
 
 <img src="/assets/image/rc_extension/wsl/rc-4.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
