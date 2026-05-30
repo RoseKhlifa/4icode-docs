@@ -1,6 +1,6 @@
 ---
 title: 在 CherryStudio 中配置使用
-icon: /cherrystudio.png
+icon: /assets/icon/cherrystudio/cherrystudio.png
 order: 1
 footer: false
 ---
@@ -22,7 +22,7 @@ CherryStudio 支持 OpenAI 兼容接口，可以直接接入 RightCode 的 Codex
 弹窗中按下面填写：
 
 - `提供商名称`：`RightCode`
-- `提供商类型`：`OpenAI`
+- `提供商类型`：`New Api`
 
 ![添加 RightCode 提供商](/assets/image/rc_extension/cherrystudio/add-provider.png)
 

@@ -5,17 +5,7 @@ order: 1
 footer: false
 ---
 
-## API 在线测试
-
-在下方输入您的 API Key，选择要测试的 API 和模型，即可直接在页面上进行通信测试。
-
-<ApiTester />
-
----
-
 ## Curl 命令参考
-
-以下是各 API 的 Curl 调用示例，供参考。
 
 ### GPT-Codex
 
@@ -122,7 +112,3 @@ curl --location 'https://right.codes/gemini/v1beta/models/gemini-3-pro-preview:s
     ]
 }'
 ```
-
-<script setup>
-import ApiTester from "@source/.vuepress/components/ApiTester.vue";
-</script>

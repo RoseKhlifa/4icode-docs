@@ -145,18 +145,33 @@ footer: false
       <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
     </button>
   </div>
-  <div class="qq-group-card is-open">
+  <div class="qq-group-card is-full">
     <div class="qq-group-icon-wrap">
       <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
     </div>
     <div class="qq-group-content">
       <div class="qq-group-header">
         <span class="qq-group-name">五群</span>
-        <span class="qq-group-status is-open">未满</span>
+        <span class="qq-group-status">已满</span>
       </div>
       <div class="qq-group-number">1067908656</div>
     </div>
     <button class="qq-group-copy" @click="copyText('1067908656', $event)">
+      <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
+    </button>
+  </div>
+  <div class="qq-group-card is-open">
+    <div class="qq-group-icon-wrap">
+      <iconify-icon icon="fa:group" width="22" height="22"></iconify-icon>
+    </div>
+    <div class="qq-group-content">
+      <div class="qq-group-header">
+        <span class="qq-group-name">六群</span>
+        <span class="qq-group-status is-open">未满</span>
+      </div>
+      <div class="qq-group-number">296525056</div>
+    </div>
+    <button class="qq-group-copy" @click="copyText('296525056', $event)">
       <iconify-icon icon="solar:copy-linear" width="16" height="16"></iconify-icon>
     </button>
   </div>
@@ -194,7 +209,7 @@ footer: false
       <iconify-icon icon="ion:logo-wechat" width="32" height="32"></iconify-icon>
     </div>
     <div class="contact-info">
-      <span class="contact-label">站长客服</span>
+      <span class="contact-label">站长微信</span>
       <span class="contact-value">diagpt</span>
     </div>
     <button class="copy-btn" @click="copyText('RightCode_Service', $event)">

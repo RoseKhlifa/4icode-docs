@@ -1,6 +1,6 @@
 ---
 title: 在 OpenCode 中配置使用
-icon: /opencode.jpg
+icon: /assets/icon/opencode/opencode.jpg
 order: 1
 footer: false
 ---

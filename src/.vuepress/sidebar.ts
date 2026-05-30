@@ -59,6 +59,11 @@ export default sidebar({
           icon: "vscode-icons:file-type-gemini",
           link: "gemini.md",
         },
+        {
+          text: "WSL 配置",
+          icon: "/wsl2-logo.svg",
+          link: "wsl.md",
+        },
       ],
     },
     {
@@ -92,33 +97,18 @@ export default sidebar({
         },
         {
           text: "CherryStudio",
-          icon: "/cherrystudio.png",
+          icon: "/assets/icon/cherrystudio/cherrystudio.png",
           link: "cherrystudio.md",
         },
         {
           text: "OpenCode",
-          icon: "/opencode.jpg",
+          icon: "/assets/icon/opencode/opencode.jpg",
           link: "opencode.md",
-        },
-        {
-          text: "Kilocode",
-          icon: "/kilocode.gif",
-          link: "kilocode.md",
-        },
-        {
-          text: "Zed",
-          icon: "/zed-logo.svg",
-          link: "zed.md",
         },
         {
           text: "Hermes Agent",
           icon: "streamline:command",
           link: "hermes.md",
-        },
-        {
-          text: "WSL 配置",
-          icon: "/wsl2-logo.svg",
-          link: "wsl.md",
         },
       ],
     },

@@ -33,7 +33,7 @@ footer: false
   <div class="payg-container">
     <div class="payg-rate">
       <span class="rate-label">充值比例</span>
-      <span class="rate-value">0.2 元 = 站内 1$</span>
+      <span class="rate-value">1 元 = 站内 1$</span>
     </div>
     <div class="payg-cards">
       <div class="payg-card codex">
@@ -51,7 +51,7 @@ footer: false
         </div>
         <div class="payg-info">
           <span class="payg-name">Claude Max 号池</span>
-          <span class="payg-price">1 元/美金</span>
+          <span class="payg-price">2 元/美金</span>
         </div>
       </div>
     </div>
