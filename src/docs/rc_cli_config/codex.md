@@ -60,7 +60,7 @@ open "$HOME/.codex"
 
 ```json
 model_provider = "rightcode"
-model = "gpt-5.2"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 network_access = "enabled"
 disable_response_storage = true
