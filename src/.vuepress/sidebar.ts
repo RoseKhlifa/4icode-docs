@@ -67,6 +67,33 @@ export default sidebar({
       ],
     },
     {
+      text: "画图接口",
+      icon: "material-symbols:draw-outline",
+      prefix: "rc_draw/",
+      children: [
+        {
+          text: "接口总览",
+          icon: "material-symbols:draw-outline",
+          link: "README.md",
+        },
+        {
+          text: "图片生成",
+          icon: "material-symbols:image",
+          link: "images-generations.md",
+        },
+        {
+          text: "Gemini 生成",
+          icon: "vscode-icons:file-type-gemini",
+          link: "gemini.md",
+        },
+        {
+          text: "任务查询",
+          icon: "material-symbols:manage-search",
+          link: "tasks.md",
+        },
+      ],
+    },
+    {
       text: "第三方使用",
       icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
       prefix: "rc_extension/",
@@ -75,25 +102,6 @@ export default sidebar({
           text: "Curl调用示例",
           icon: "si:pull-request-fill",
           link: "curl.md",
-        },
-        {
-          text: "画图接口",
-          icon: "material-symbols:draw-outline",
-          link: "draw/",
-          collapsible: true,
-          expanded: false,
-          children: [
-            {
-              text: "/v1/chat/completions",
-              icon: "hugeicons:chat-gpt",
-              link: "draw/chat-completions.md",
-            },
-            {
-              text: "/v1/images/generations",
-              icon: "material-symbols:image",
-              link: "draw/images-generations.md",
-            },
-          ],
         },
         {
           text: "CherryStudio",

@@ -1,5 +1,6 @@
 # 依赖
 node_modules/
+workspace
 
 # VuePress 构建产物和缓存
 src/.vuepress/dist/
