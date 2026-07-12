@@ -205,25 +205,70 @@ html[data-theme="dark"] {
   padding-top: 68px !important;
 }
 
+@media (max-width: 960px) {
+  .ficodes-topbar {
+    left: 3%;
+    right: 3%;
+  }
+}
+
 @media (max-width: 720px) {
   .ficodes-topbar {
-    top: 8px;
-    left: 2%;
-    right: 2%;
+    top: 10px;
+    left: 3%;
+    right: 3%;
   }
   .ficodes-topbar-inner {
-    padding: 10px 14px;
-    gap: 12px;
-    border-radius: 24px;
+    padding: 8px 12px 8px 10px;
+    gap: 10px;
+    border-radius: 20px;
     flex-wrap: wrap;
+  }
+  .ficodes-topbar-brand {
+    gap: 10px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .ficodes-topbar-logo {
+    width: 30px;
+    height: 30px;
   }
   .ficodes-topbar-brand-name {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
   .ficodes-topbar-nav {
-    gap: 12px;
+    gap: 10px 14px;
+    flex: 1 0 100%;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    padding-top: 6px;
+    border-top: 1px solid rgba(35, 28, 21, 0.08);
+  }
+  .ficodes-topbar-nav > a {
+    font-size: 0.82rem;
+    padding: 2px 0;
+    letter-spacing: 0.04em;
+  }
+  .ficodes-topbar-theme {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* 内容区避让高度也要跟着涨 (顶栏折成两行) */
+  .vp-page,
+  .vp-blog-page,
+  .vp-sidebar,
+  .vp-toc {
+    padding-top: 96px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .ficodes-topbar-brand-name {
+    font-size: 0.88rem;
+  }
+  .ficodes-topbar-nav > a {
+    font-size: 0.78rem;
   }
 }
 </style>
