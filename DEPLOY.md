@@ -82,6 +82,7 @@ server {
     location = /              { try_files /index.html =404; }
     location = /contact       { try_files /contact.html =404; }
     location = /about         { try_files /about.html =404; }
+    location = /policy        { try_files /policy.html =404; }
 
     # 首页项目的资源(logo/字体/视频等)
     location /assets/ { }
