@@ -127,12 +127,42 @@ cd /root
 git clone git@github.com:RoseKhlifa/4icode-status.git status
 cd status
 npm install          # 3-5 分钟, 会编译 better-sqlite3
+
+# ⚠ 关键: 反代场景下必须设 STATUS_BASE_PATH, 否则 _next/static 资源
+# 打不到本进程, 页面上 CSS 和 JS 全 404 (浏览器控制台报 "Unexpected token '<'")
+# 本文档假设你走 https://4i.codes/status/ 挂载, base = /status
+export STATUS_BASE_PATH=/status
+
+# build 时会读这个环境变量, 生成的 asset URL 会自动加前缀
 npm run build
 
-pm2 start "npm start" --name 4icode-status
+# pm2 起服务时也要带上, 让 next start 端也知道
+STATUS_BASE_PATH=/status pm2 start "npm start" --name 4icode-status
 pm2 save
 pm2 startup          # 按提示复制那条 systemctl 命令跑一下, 让 pm2 开机自启
 ```
+
+**如果之前起过服务,基础是没这个环境变量**:
+```bash
+cd /root/status
+export STATUS_BASE_PATH=/status
+npm run build
+pm2 restart 4icode-status --update-env    # ⚠ --update-env 让 pm2 读新的 env
+```
+
+**长期方案:写到 pm2 ecosystem 或 systemd unit**
+建 `/root/status/ecosystem.config.cjs`:
+```js
+module.exports = {
+  apps: [{
+    name: '4icode-status',
+    script: 'npm',
+    args: 'start',
+    env: { STATUS_BASE_PATH: '/status' },
+  }],
+};
+```
+之后 `pm2 start ecosystem.config.cjs` + `pm2 save`。
 
 ### 3.2 抓一次性管理密码
 
@@ -216,9 +246,16 @@ pm2 logs 4icode-status --lines 20 --nostream         # 确认无错
     # ============================================
     # [3] 状态看板 (Next.js 反代 8800)
     # ============================================
-    # ⚠ location /status/ 末尾的 / 和 proxy_pass 末尾的 / 都不能省
+    # ⚠ 关键改动: 与 STATUS_BASE_PATH=/status 配套,
+    # proxy_pass 结尾 *不带* 路径, 让 nginx 把 /status/ 完整转给 Next.js.
+    # Next.js 生成的 _next/static/xxx 路径带 /status 前缀, 请求会正确回到本进程.
+    #
+    # 老配置 proxy_pass http://127.0.0.1:8800/;  (末尾带 /) 会剥掉前缀,
+    # Next 收到 / 但 asset URL 里带 /status, 于是浏览器请求 /status/_next/xxx
+    # 又打到 nginx -> 匹配到 landing 的 location / 兜底 -> 返回 index.html
+    # -> 浏览器把 HTML 当 JS 解析 -> "Unexpected token '<'"
     location /status/ {
-        proxy_pass http://127.0.0.1:8800/;
+        proxy_pass http://127.0.0.1:8800;    # ← 注意结尾不带 /
         proxy_http_version 1.1;
 
         # 基础转发头
@@ -332,6 +369,7 @@ curl -I https://4i.codes/status/admin/login         # 200
 | `/doc/` 404 | alias 路径少 `/` 或产物没复制 | `ls /var/www/4icode-docs/index.html`, alias 值 `/var/www/4icode-docs/` |
 | `/doc/quick_start/intro` 404 但 `.html` 后缀能开 | `try_files` 缺 `$uri.html` | 用本文档给的完整 try_files |
 | `/status/` 502 | pm2 没起 或 8800 没监听 | `pm2 status`, `ss -tlnp \| grep 8800` |
+| `/status/` 打开是白屏, 控制台 `Unexpected token '<'` 一堆 | Next `basePath` 没设 或 nginx `proxy_pass` 有末尾 `/` 把前缀剥掉 | 1) `export STATUS_BASE_PATH=/status && npm run build`;<br/>2) `STATUS_BASE_PATH=/status pm2 restart 4icode-status --update-env`;<br/>3) nginx: `proxy_pass http://127.0.0.1:8800` (末尾**不带** `/`) |
 | `/status/admin/login` 输密码没反应 | https 没配 或 X-Forwarded-Proto 没传 | 保证 `proxy_set_header X-Forwarded-Proto $scheme;` 在 nginx 配置里, 且地址必须 https |
 | docs build 报 sass 错 | Node 版本旧 | Node ≥ 20 |
 | status 装依赖挂 in `better-sqlite3` | 编译工具没装 | `apt install -y python3 make g++ build-essential` |
