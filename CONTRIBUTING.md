@@ -250,7 +250,7 @@ VuePress `base: "/doc/"` 意味着:
 cd docs
 yarn install         # 或 npm install (如果没 yarn)
 yarn docs:dev        # 起本地服务
-# 打开 http://localhost:8080/doc/
+# 打开 http://localhost:8801/doc/
 ```
 
 **国内加速**(如果依赖装得慢):

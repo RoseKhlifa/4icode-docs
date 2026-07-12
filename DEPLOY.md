@@ -32,7 +32,7 @@ yarn docs:dev
 # 或: npm run docs:dev
 ```
 
-默认在 `http://localhost:8080/doc/` 打开(因为 `config.ts` 里 `base: "/doc/"`)。
+默认在 `http://localhost:8801/doc/` 打开(因为 `config.ts` 里 `base: "/doc/"`)。
 
 ## 构建产物
 
@@ -92,11 +92,16 @@ server {
         try_files $uri $uri/ $uri.html /doc/index.html;
     }
 
-    # 状态页 - 独立项目, 反代到内网端口
-    location /status {
-        proxy_pass http://127.0.0.1:3001/;
+    # 状态页 - 独立 Next.js 项目, 反代到内网 8800
+    # ⚠ location 和 proxy_pass 尾部两个 / 都不能省, 否则 Next.js 收到的路径不对
+    location /status/ {
+        proxy_pass http://127.0.0.1:8800/;
+        proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_buffering off;
     }
 
     # API 网关 - 反代到实际 API 服务
@@ -171,8 +176,8 @@ docs/                              # VuePress 项目根
 
 ## 常见问题
 
-**Q: dev 访问 `http://localhost:8080` 打开是空白?**
-A: 因为设了 `base: "/doc/"`,访问 `http://localhost:8080/doc/`。
+**Q: dev 访问 `http://localhost:8801` 打开是空白?**
+A: 因为设了 `base: "/doc/"`,访问 `http://localhost:8801/doc/`。
 
 **Q: 顶栏胶囊没显示?**
 A: 检查 `.vuepress/client.ts` 是否存在, `TopBar.vue` 里的 `<img src="/doc/logo.png">` 路径是否对应 base。

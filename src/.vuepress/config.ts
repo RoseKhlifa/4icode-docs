@@ -24,6 +24,8 @@ export default defineUserConfig({
         },
       },
       server: {
+        // dev / preview 都监听 8801, 与 status 项目 (8800) 并存互不干扰
+        port: 8801,
         proxy: {
           '/4i-api': {
             target: 'https://api.4i.codes',
@@ -31,6 +33,9 @@ export default defineUserConfig({
             rewrite: (path) => path.replace(/^\/4i-api/, ''),
           },
         },
+      },
+      preview: {
+        port: 8801,
       },
     },
   }),
