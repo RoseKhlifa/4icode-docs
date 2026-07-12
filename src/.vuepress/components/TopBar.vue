@@ -2,12 +2,12 @@
   <header class="ficodes-topbar">
     <div class="ficodes-topbar-inner">
       <a class="ficodes-topbar-brand" href="https://4i.codes">
-        <img class="ficodes-topbar-logo" src="/doc/logo.png" alt="4i.codes" />
+        <img class="ficodes-topbar-logo" :src="logoUrl" alt="4i.codes" />
         <span class="ficodes-topbar-brand-name">4i.codes</span>
       </a>
       <nav class="ficodes-topbar-nav" aria-label="Primary">
         <a href="https://4i.codes">首页</a>
-        <a href="/doc/" class="is-active">文档</a>
+        <a :href="docHome" class="is-active">文档</a>
         <a href="https://4i.codes/status">状态</a>
         <a href="https://4i.codes/contact">联系</a>
         <a href="https://4i.codes/about">关于</a>
@@ -38,6 +38,13 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from "vuepress/client";
+
+// withBase 会自动加上 config.ts 里定义的 base ("/doc/"),
+// 好处: dev 和 build 都工作, SSR 时也是纯字符串, 不会被 Node ESM 误当作 import
+const logoUrl = withBase("/logo.png");
+const docHome = withBase("/");
+
 // 占位:目前只有浅色主题,按钮保留为将来暗色/多主题铺路
 const toggleTheme = () => {
   /* no-op placeholder */

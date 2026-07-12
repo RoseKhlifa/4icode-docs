@@ -23,17 +23,6 @@ export default defineUserConfig({
           },
         },
       },
-      // ⚠ 关键: HTML 里 <img src="/doc/logo.png"> 这类硬编码 base 路径,
-      // Vite build 时 rollup 会尝试作为模块 resolve 结果找不到.
-      // 声明为 external -> 当作运行时 URL 保留, 不打包.
-      build: {
-        rollupOptions: {
-          external: (source: string) =>
-            source.startsWith("/doc/") ||
-            source.startsWith("/assets/") ||
-            source.startsWith("/vendors/"),
-        },
-      },
       server: {
         // dev / preview 都监听 8801, 与 status 项目 (8800) 并存互不干扰
         port: 8801,

@@ -26,9 +26,9 @@ wsl -l -v
 ```
 
 通常你会看到已经安装了一个 Ubuntu 作为默认发行版。
-<img src="/doc/assets/image/extension/wsl/rc-1.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-1.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 打开终端并输入 `wsl` 来连接到相应的 WSL。
-<img src="/doc/assets/image/extension/wsl/rc-2.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-2.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 :::tip
 如果输入 `wsl --install` 无反应，尝试用 `wsl.exe` 替换 `wsl`。
@@ -80,7 +80,7 @@ nvm install 22
 nvm use 22
 ```
 
-<img src="/doc/assets/image/extension/wsl/rc-3.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-3.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 > 然后通过 npm 安装 Codex：
 
@@ -88,7 +88,7 @@ nvm use 22
 npm install -g @openai/codex
 ```
 
-<img src="/doc/assets/image/extension/wsl/rc-4.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-4.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 > WSL 和 Windows 的配置文件不互通  
 > 因此，我们需要在 WSL 中导入一份配置文件。
@@ -96,7 +96,7 @@ npm install -g @openai/codex
 :::tabs
 @tab 手动导入
 > 1. 手动复制以下路径中的 `.codex` 或 `.claude` 配置文件夹：
-<img src="/doc/assets/image/extension/wsl/rc-5.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-5.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 ```bash
 C:\Users\<your-user-name>
@@ -105,19 +105,19 @@ C:\Users\<your-user-name>
 
 > 2. 在资源管理器中输入以下路径（或从左下角小企鹅手动进入此路径）：
 
-<img src="/doc/assets/image/extension/wsl/rc-6.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-6.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 ```bash
 \\wsl.localhost\<Your-Distro-Name>\home\<Your-User-Name>
 ```
 
-<img src="/doc/assets/image/extension/wsl/rc-7.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-7.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 > 3. 将刚才复制的文件夹粘贴到该目录下，并重新启动 AI 终端即可
 
 @tab 通过 Windows 下的 CC-Switch 导入
 
 > 1. 点击左上角的设置（齿轮）按钮 → 高级 → 配置文件目录
-<img src="/doc/assets/image/extension/wsl/rc-8.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-8.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 > 2. 将路径修改为（以 Codex 为例）：
 
 ```bash
@@ -127,7 +127,7 @@ C:\Users\<your-user-name>
  
 > 现在你应该能够在 Windows 目录中唤起 WSL，然后在 WSL 中正常使用 Codex。  
 > 如果你觉得麻烦，可以直接看下一节。
-<img src="/doc/assets/image/extension/wsl/rc-9.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-9.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 
 ## 使用 VS Code 与 WSL 协作（以 Codex 扩展为例）
@@ -136,7 +136,7 @@ C:\Users\<your-user-name>
 :::tabs
 @tab VS Code 留在 Windows 中
 **在不连接 WSL、在 Windows 目录下工作的前提下：**
-<img src="/doc/assets/image/extension/wsl/rc-10.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-10.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 如图所示，在 VS Code 的 Codex 扩展右上角设置中点选 `Windows 设置 - 在 WSL 中运行`，然后重新加载 VS Code 窗口即可。
 如右上角无相关设置：
 使用 `Ctrl+,` 进入 VS Code 设置页面，搜索 `codex`，勾选 `Run Codex In Windows Subsystem For Linux` 设置即可。
@@ -146,15 +146,15 @@ C:\Users\<your-user-name>
 @tab VS Code 连接到 WSL
 点击左下角的 `><`（远程连接）按钮
 
-<img src="/doc/assets/image/extension/wsl/rc-11.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-11.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 选择 `Connect to WSL Using Distro`
 
-<img src="/doc/assets/image/extension/wsl/rc-12.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-12.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 选择你在上一节中迁移过配置文件的 Linux 发行版
 
-<img src="/doc/assets/image/extension/wsl/rc-13.webp" width="600" style="display:block;margin:0 auto;height:auto;" />
+<img :src="$withBase('/assets/image/extension/wsl/rc-13.webp')" width="600" style="display:block;margin:0 auto;height:auto;" />
 
 此时，VS Code 已经连接到指定的 WSL。  
 如提示缺少 Codex CLI，请在 WSL 中重新安装 Codex CLI；随后直接唤起 Codex 扩展即可使用。  

@@ -24,7 +24,7 @@ footer: Copyright © 2026-present 4i.codes
     </div>
     <div class="hero-content">
       <div class="logo-container">
-        <img src="/doc/logo.png" alt="4i.codes" class="hero-logo" />
+        <img :src="$withBase('/logo.png')" alt="4i.codes" class="hero-logo" />
       </div>
       <h1 class="hero-title">
         <span class="gradient-text">4i.codes</span>

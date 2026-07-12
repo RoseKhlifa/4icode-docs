@@ -10,7 +10,7 @@ footer: false
 <div class="intro-section">
   <div class="intro-card">
     <div class="intro-icon">
-      <img src="/doc/logo.png" alt="4i.codes" width="100" height="100" />
+      <img :src="$withBase('/logo.png')" alt="4i.codes" width="100" height="100" />
     </div>
     <div class="intro-content">
       <p><strong>4i.codes</strong> 是一个面向开发者的 <span class="intro-highlight">AI API 中转平台</span>,统一接入全球主流大模型,以<span class="intro-highlight">稳定路由</span>和<span class="intro-highlight">透明计费</span>为核心承诺。</p>
