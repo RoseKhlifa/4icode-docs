@@ -48,7 +48,7 @@ const props = defineProps({
   version: { type: String, default: '0.5.72' },
   summary: { type: String, default: '下载以下替换文件，解压后将 JS 文件复制到 webview\\assets 目录中覆盖原文件，重启 VSCode 即可使用最新模型。' },
   fileName: { type: String, default: 'vscode-codex-replace.zip' },
-  downloadUrl: { type: String, default: '/assets/file/codex/vscode-codex-replace.zip' },
+  downloadUrl: { type: String, default: '/doc/assets/file/codex/vscode-codex-replace.zip' },
 })
 </script>
 
@@ -56,7 +56,7 @@ const props = defineProps({
 .codex-download {
   margin: 1.2em 0;
   border-radius: 12px;
-  border: 1px solid var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
+  border: 1px solid var(--rc-brand-tint, rgba(22, 19, 17, 0.14));
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 247, 242, 0.9) 100%);
   padding: 1.25rem 1.5rem;
   backdrop-filter: blur(8px);
@@ -64,8 +64,8 @@ const props = defineProps({
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .codex-download:hover {
-  border-color: rgba(224, 107, 49, 0.35);
-  box-shadow: 0 8px 24px rgba(224, 107, 49, 0.1);
+  border-color: rgba(22, 19, 17, 0.35);
+  box-shadow: 0 8px 24px rgba(22, 19, 17, 0.1);
 }
 .codex-download__header {
   margin-bottom: 0.75rem;
@@ -78,8 +78,8 @@ const props = defineProps({
   border-radius: 20px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--rc-brand, #e06b31);
-  background: var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
+  color: var(--rc-brand, #2a221a);
+  background: var(--rc-brand-tint, rgba(22, 19, 17, 0.14));
   line-height: 1.6;
 }
 .codex-download__tag-icon {
@@ -94,8 +94,8 @@ const props = defineProps({
   margin: 0 0 1rem;
   padding: 10px 14px;
   border-radius: 8px;
-  border-left: 3px solid var(--rc-brand, #e06b31);
-  background: rgba(224, 107, 49, 0.06);
+  border-left: 3px solid var(--rc-brand, #2a221a);
+  background: rgba(22, 19, 17, 0.06);
   transition: background 0.2s;
 }
 .codex-download__summary-icon {
@@ -103,7 +103,7 @@ const props = defineProps({
   height: 18px;
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--rc-brand, #e06b31);
+  color: var(--rc-brand, #2a221a);
   opacity: 0.8;
 }
 .codex-download__summary-text {
@@ -118,12 +118,12 @@ const props = defineProps({
   gap: 1rem;
   padding: 0.85rem 1rem;
   border-radius: 10px;
-  border: 1px solid rgba(224, 107, 49, 0.12);
+  border: 1px solid rgba(22, 19, 17, 0.12);
   background: rgba(255, 255, 255, 0.6);
   transition: border-color 0.2s;
 }
 .codex-download__file-card:hover {
-  border-color: rgba(224, 107, 49, 0.28);
+  border-color: rgba(22, 19, 17, 0.28);
 }
 .codex-download__file-info {
   display: flex;
@@ -135,7 +135,7 @@ const props = defineProps({
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  color: var(--rc-brand, #e06b31);
+  color: var(--rc-brand, #2a221a);
 }
 .codex-download__file-meta {
   display: flex;
@@ -164,15 +164,15 @@ const props = defineProps({
   font-size: 0.88rem;
   font-weight: 600;
   color: #fff;
-  background: var(--rc-brand, #e06b31);
+  background: var(--rc-brand, #2a221a);
   text-decoration: none;
   white-space: nowrap;
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-  box-shadow: 0 2px 8px rgba(224, 107, 49, 0.25);
+  box-shadow: 0 2px 8px rgba(22, 19, 17, 0.2);
 }
 .codex-download__btn:hover {
-  background: var(--rc-brand-dark, #c85b28);
-  box-shadow: 0 4px 14px rgba(224, 107, 49, 0.35);
+  background: var(--rc-brand-dark, #161311);
+  box-shadow: 0 4px 14px rgba(22, 19, 17, 0.35);
   transform: translateY(-1px);
   color: #fff;
   text-decoration: none;
@@ -189,25 +189,25 @@ const props = defineProps({
 /* Dark mode */
 html[data-theme="dark"] .codex-download {
   background: linear-gradient(135deg, rgba(30, 30, 35, 0.9) 0%, rgba(34, 26, 22, 0.9) 100%);
-  border-color: rgba(224, 107, 49, 0.22);
+  border-color: rgba(22, 19, 17, 0.22);
 }
 html[data-theme="dark"] .codex-download:hover {
-  border-color: rgba(224, 107, 49, 0.42);
+  border-color: rgba(22, 19, 17, 0.42);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 html[data-theme="dark"] .codex-download__file-card {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(224, 107, 49, 0.15);
+  border-color: rgba(22, 19, 17, 0.12);
 }
 html[data-theme="dark"] .codex-download__file-card:hover {
-  border-color: rgba(224, 107, 49, 0.32);
+  border-color: rgba(22, 19, 17, 0.32);
 }
 html[data-theme="dark"] .codex-download__summary code {
-  background: rgba(224, 107, 49, 0.2);
-  color: var(--rc-brand-light, #f07a3f);
+  background: rgba(22, 19, 17, 0.2);
+  color: var(--rc-brand-light, #3d3226);
 }
 html[data-theme="dark"] .codex-download__summary {
-  background: rgba(224, 107, 49, 0.08);
+  background: rgba(22, 19, 17, 0.06);
 }
 html[data-theme="dark"] .codex-download__summary-text {
   color: rgba(255, 255, 255, 0.85);

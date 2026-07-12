@@ -3,12 +3,15 @@ import { viteBundler } from "@vuepress/bundler-vite";
 import theme from "./theme.js";
 
 export default defineUserConfig({
+  base: "/doc/",
   lang: "zh-CN",
-  title: "Right Code文档",
+  title: "4i.codes 文档",
+  description: "4i.codes 官方文档 — API 接入、CLI 配置、画图接口、常见问题",
   theme,
 
-  // 和 PWA 一起启用
-  // shouldPrefetch: false,
+  head: [
+    ["link", { rel: "icon", type: "image/png", href: "/doc/favicon.png" }],
+  ],
 
   bundler: viteBundler({
     viteOptions: {
@@ -22,10 +25,10 @@ export default defineUserConfig({
       },
       server: {
         proxy: {
-          '/rc-api': {
-            target: 'https://right.codes',
+          '/4i-api': {
+            target: 'https://api.4i.codes',
             changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/rc-api/, ''),
+            rewrite: (path) => path.replace(/^\/4i-api/, ''),
           },
         },
       },

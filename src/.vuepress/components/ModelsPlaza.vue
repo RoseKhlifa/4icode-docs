@@ -31,7 +31,7 @@
           <div class="group-actions">
             <div class="base-url" @click="copyBaseUrl(upstream.prefix, $event)">
               <iconify-icon icon="mdi:link-variant" width="16" height="16"></iconify-icon>
-              <span class="url-text">{{ 'https://right.codes' + upstream.prefix }}</span>
+              <span class="url-text">{{ 'https://4i.codes' + upstream.prefix }}</span>
               <iconify-icon icon="solar:copy-linear" width="14" height="14" class="copy-icon"></iconify-icon>
             </div>
           </div>
@@ -93,7 +93,7 @@ const toastType = ref('success');
 let toastTimer = null;
 
 // 开发环境使用代理，生产环境使用完整 URL
-const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://right.codes';
+const BASE_URL = import.meta.env.DEV ? '/4i-api' : 'https://4i.codes';
 
 const fetchModels = async () => {
   loading.value = true;
@@ -122,7 +122,7 @@ const showCopyToast = (message, type = 'success') => {
 };
 
 const copyBaseUrl = async (prefix, event) => {
-  const url = 'https://right.codes' + prefix;
+  const url = 'https://4i.codes' + prefix;
   const triggerEl = event.currentTarget;
   try {
     await navigator.clipboard.writeText(url);
@@ -165,13 +165,13 @@ onUnmounted(() => {
 /* 模型广场容器 */
 .models-plaza {
   margin: 20px 0;
-  --rc-accent: var(--theme-color, #e06b31);
-  --rc-accent-hover: var(--rc-brand-light, #f07a3f);
-  --rc-accent-soft-bg: rgba(224, 107, 49, 0.08);
-  --rc-accent-soft-bg-hover: rgba(224, 107, 49, 0.15);
-  --rc-accent-border-soft: rgba(224, 107, 49, 0.18);
-  --rc-accent-border: rgba(224, 107, 49, 0.25);
-  --rc-accent-gradient: linear-gradient(135deg, rgba(224, 107, 49, 0.08) 0%, rgba(240, 122, 63, 0.05) 100%);
+  --rc-accent: var(--theme-color, #2a221a);
+  --rc-accent-hover: var(--rc-brand-light, #3d3226);
+  --rc-accent-soft-bg: rgba(22, 19, 17, 0.06);
+  --rc-accent-soft-bg-hover: rgba(22, 19, 17, 0.12);
+  --rc-accent-border-soft: rgba(22, 19, 17, 0.14);
+  --rc-accent-border: rgba(22, 19, 17, 0.2);
+  --rc-accent-gradient: linear-gradient(135deg, rgba(22, 19, 17, 0.06) 0%, rgba(22, 19, 17, 0.05) 100%);
 }
 
 .copy-toast {
@@ -190,7 +190,7 @@ onUnmounted(() => {
 }
 
 .copy-toast.success {
-  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  background: linear-gradient(135deg, #2a221a 0%, #06ad56 100%);
   color: #fff;
 }
 
@@ -329,9 +329,9 @@ onUnmounted(() => {
 }
 
 .base-url.copied {
-  background: #07c160;
+  background: #2a221a;
   color: #fff;
-  border-color: #07c160;
+  border-color: #2a221a;
 }
 
 .url-text {
@@ -369,7 +369,7 @@ onUnmounted(() => {
 .model-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-color: rgba(224, 107, 49, 0.25);
+  border-color: rgba(22, 19, 17, 0.2);
 }
 
 .model-card.unavailable {
@@ -392,7 +392,7 @@ onUnmounted(() => {
 }
 
 .model-ribbon.available {
-  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  background: linear-gradient(135deg, #2a221a 0%, #06ad56 100%);
   color: #fff;
 }
 
@@ -443,7 +443,7 @@ onUnmounted(() => {
 }
 
 .copy-model-btn.copied {
-  background: #07c160;
+  background: #2a221a;
   color: #fff;
 }
 
@@ -498,12 +498,12 @@ onUnmounted(() => {
 }
 
 .model-badge.token {
-  background: rgba(224, 107, 49, 0.12);
+  background: rgba(22, 19, 17, 0.12);
   color: var(--rc-accent);
 }
 
 .model-badge.request {
-  background: rgba(224, 107, 49, 0.12);
+  background: rgba(22, 19, 17, 0.12);
   color: var(--rc-accent);
 }
 
@@ -560,18 +560,18 @@ onUnmounted(() => {
 
 [data-theme="dark"] .group-remark {
   color: #a8c5da;
-  background: linear-gradient(135deg, rgba(224, 107, 49, 0.16) 0%, rgba(240, 122, 63, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(22, 19, 17, 0.16) 0%, rgba(45, 36, 28, 0.1) 100%);
   border-left-color: var(--rc-accent);
 }
 
 [data-theme="dark"] .base-url {
-  background: rgba(224, 107, 49, 0.16);
-  border-color: rgba(224, 107, 49, 0.28);
+  background: rgba(22, 19, 17, 0.16);
+  border-color: rgba(22, 19, 17, 0.28);
   color: var(--rc-accent);
 }
 
 [data-theme="dark"] .base-url:hover {
-  background: rgba(224, 107, 49, 0.26);
+  background: rgba(22, 19, 17, 0.26);
 }
 
 [data-theme="dark"] .model-card {
@@ -582,7 +582,7 @@ onUnmounted(() => {
 
 [data-theme="dark"] .model-card:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  border-color: rgba(224, 107, 49, 0.35);
+  border-color: rgba(22, 19, 17, 0.35);
 }
 
 [data-theme="dark"] .model-name {
@@ -594,12 +594,12 @@ onUnmounted(() => {
 }
 
 [data-theme="dark"] .copy-model-btn {
-  background: rgba(224, 107, 49, 0.16);
+  background: rgba(22, 19, 17, 0.16);
   color: var(--rc-accent);
 }
 
 [data-theme="dark"] .copy-model-btn:hover {
-  background: rgba(224, 107, 49, 0.26);
+  background: rgba(22, 19, 17, 0.26);
 }
 
 [data-theme="dark"] .price-item {
@@ -627,12 +627,12 @@ onUnmounted(() => {
 }
 
 [data-theme="dark"] .model-badge.token {
-  background: rgba(224, 107, 49, 0.22);
+  background: rgba(22, 19, 17, 0.22);
   color: var(--rc-accent);
 }
 
 [data-theme="dark"] .model-badge.request {
-  background: rgba(224, 107, 49, 0.22);
+  background: rgba(22, 19, 17, 0.22);
   color: var(--rc-accent);
 }
 

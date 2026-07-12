@@ -5,10 +5,10 @@ export default sidebar({
     {
       text: "快速开始",
       icon: "streamline-sharp:startup-solid",
-      prefix: "rc_quick_start/",
+      prefix: "quick_start/",
       children: [
         {
-          text: "RCode简介",
+          text: "4i.codes 简介",
           icon: "fluent-mdl2:web-environment",
           link: "intro.md",
         },
@@ -37,7 +37,7 @@ export default sidebar({
     {
       text: "CLI 配置",
       icon: "streamline:command",
-      prefix: "rc_cli_config/",
+      prefix: "cli_config/",
       children: [
         {
           text: "CC-Switch配置",
@@ -69,7 +69,7 @@ export default sidebar({
     {
       text: "画图接口",
       icon: "material-symbols:draw-outline",
-      prefix: "rc_draw/",
+      prefix: "draw/",
       children: [
         {
           text: "接口总览",
@@ -96,7 +96,7 @@ export default sidebar({
     {
       text: "第三方使用",
       icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
-      prefix: "rc_extension/",
+      prefix: "extension/",
       children: [
         {
           text: "Curl调用示例",
@@ -123,7 +123,7 @@ export default sidebar({
     {
       text: "常见问题",
       icon: "streamline-freehand-color:plugin-jigsaw-puzzle",
-      prefix: "rc_questions/",
+      prefix: "questions/",
       children: [
         {
           text: "Codex",

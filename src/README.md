@@ -1,5 +1,5 @@
 ---
-title: Right Code文档站
+title: 4i.codes文档站
 icon: fa7-solid:home-lg
 pageClass: custom-home
 article: false
@@ -10,7 +10,7 @@ contributors: false
 comment: false
 breadcrumb: false
 copyright: false
-footer: Copyright © 2026-present Right Code
+footer: Copyright © 2026-present 4i.codes
 ---
 
 <div class="home-page">
@@ -24,38 +24,51 @@ footer: Copyright © 2026-present Right Code
     </div>
     <div class="hero-content">
       <div class="logo-container">
-        <img src="/1024.webp" alt="Right Code" class="hero-logo" />
+        <img src="/doc/logo.png" alt="4i.codes" class="hero-logo" />
       </div>
       <h1 class="hero-title">
-        <span class="gradient-text">Right Code</span>
+        <span class="gradient-text">4i.codes</span>
       </h1>
-      <p class="hero-tagline">企业级 AI Agent 中转平台</p>
+      <p class="hero-tagline">For I, For me — 面向开发者的 AI API 中转平台</p>
       <p class="hero-description">
-        统一接入 Claude Code、Codex、Gemini CLI 等顶级 AI 能力。<br>
-        极简 API，极致性能，赋能您的智能化开发。
+        统一接入 GPT / Claude / Gemini / Grok 全系模型。<br>
+        原生兼容 OpenAI、Anthropic 协议，5 分钟完成接入,按 token 透明计费。
       </p>
       <div class="hero-actions">
-        <a href="/docs/rc_quick_start/intro.html" class="btn btn-primary shimmer-effect">
-          <span class="btn-icon">🚀</span> 快速开始
+        <a href="/doc/docs/quick_start/intro.html" class="btn btn-primary shimmer-effect">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="m13 6 6 6-6 6"/>
+            </svg>
+          </span>
+          快速开始
         </a>
-        <a href="https://check.linux.do/group/RightCode" class="btn btn-secondary glass-effect">
-          <span class="btn-icon">📊</span> 服务监控
+        <a href="https://4i.codes/status" class="btn btn-secondary glass-effect">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+              <rect x="3" y="12" width="4" height="8" rx="1"/>
+              <rect x="10" y="7" width="4" height="13" rx="1"/>
+              <rect x="17" y="3" width="4" height="17" rx="1"/>
+            </svg>
+          </span>
+          服务监控
         </a>
       </div>
       <div class="hero-stats glass-panel">
         <div class="stat-item">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">AI Agent 支持</span>
+          <span class="stat-number">99.9%+</span>
+          <span class="stat-label">稳定运行</span>
         </div>
         <div class="divider"></div>
         <div class="stat-item">
-          <span class="stat-number">99.9%</span>
-          <span class="stat-label">服务可用性</span>
+          <span class="stat-number">5,000B+</span>
+          <span class="stat-label">累计 Token</span>
         </div>
         <div class="divider"></div>
         <div class="stat-item">
-          <span class="stat-number">1</span>
-          <span class="stat-label">统一 API Key</span>
+          <span class="stat-number">10,000+</span>
+          <span class="stat-label">服务客户</span>
         </div>
       </div>
     </div>
@@ -65,7 +78,7 @@ footer: Copyright © 2026-present Right Code
   <section class="features-section">
     <div class="section-header">
       <div class="badge">Core Features</div>
-      <h2 class="section-title">为什么选择 Right Code？</h2>
+      <h2 class="section-title">为什么选择 4i.codes？</h2>
       <p class="section-subtitle">一站式 AI Agent 中转解决方案，让您轻松接入最强大的 AI</p>
     </div>
     <div class="features-grid">
@@ -73,36 +86,36 @@ footer: Copyright © 2026-present Right Code
         <div class="feature-icon-wrapper">
           <iconify-icon icon="logos:claude-icon" width="32" height="32"></iconify-icon>
         </div>
-        <h3 class="feature-title">Claude Code</h3>
-        <p class="feature-description">支持 Anthropic Claude 全系列模型，包括 Claude 3.5 Sonnet、Claude Opus 4.5 等，具备卓越的推理能力。</p>
+        <h3 class="feature-title">Claude 全系</h3>
+        <p class="feature-description">Claude-Opus-4.x / Claude-Sonnet-4.x / Claude-Sonnet-5 / Claude-Fable-5，兼容原生 /v1/messages,推理与代码能力顶级。</p>
       </div>
       <div class="feature-card glass-card">
         <div class="feature-icon-wrapper">
           <iconify-icon icon="hugeicons:chat-gpt" width="32" height="32"></iconify-icon>
         </div>
-        <h3 class="feature-title">OpenAI Codex</h3>
-        <p class="feature-description">接入 OpenAI Codex CLI，专为代码生成与理解优化，提升编程效率。</p>
+        <h3 class="feature-title">GPT 全系</h3>
+        <p class="feature-description">GPT-5.x 系列,兼容 /v1/chat/completions 和 /v1/responses 新协议,面向 Agent 与工具调用优化。</p>
       </div>
       <div class="feature-card glass-card">
         <div class="feature-icon-wrapper">
           <iconify-icon icon="vscode-icons:file-type-gemini" width="32" height="32"></iconify-icon>
         </div>
-        <h3 class="feature-title">Gemini CLI</h3>
-        <p class="feature-description">Google Gemini 系列模型支持，强大的多模态处理能力，更快的响应速度。</p>
+        <h3 class="feature-title">Gemini & Grok</h3>
+        <p class="feature-description">Gemini 3.x 多模态能力 + Grok 4.x 快速推理,补齐主流模型矩阵,一个 key 覆盖全部。</p>
       </div>
       <div class="feature-card glass-card">
         <div class="feature-icon-wrapper">
           <iconify-icon icon="mynaui:api-solid" width="32" height="32"></iconify-icon>
         </div>
         <h3 class="feature-title">统一 API</h3>
-        <p class="feature-description">一个 API Key 访问所有 AI Agent，标准化接口，大幅简化集成和开发流程。</p>
+        <p class="feature-description">一个 API Key 访问所有模型,标准化接口,与官方 SDK 无缝兼容,零学习成本迁移。</p>
       </div>
       <div class="feature-card glass-card">
         <div class="feature-icon-wrapper">
           <iconify-icon icon="stash:balance-solid" width="32" height="32"></iconify-icon>
         </div>
-        <h3 class="feature-title">智能负载均衡</h3>
-        <p class="feature-description">自动故障转移与智能路由，确保高并发下的服务稳定性与低延迟。</p>
+        <h3 class="feature-title">稳定路由 · 透明计费</h3>
+        <p class="feature-description">多节点智能路由 + 故障自动降级,99.9%+ SLA。按 token 精确计费,账单可查可下载,无隐藏费用。</p>
       </div>
     </div>
   </section>
@@ -116,17 +129,17 @@ footer: Copyright © 2026-present Right Code
     </div>
     <div class="integration-grid">
       <div class="integration-card glass-card">
-        <div class="integration-icon">⌨️</div>
+        <div class="integration-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="34" height="34" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg></div>
         <h3 class="integration-title">CLI 工具</h3>
         <p class="integration-description">简单易用的命令行工具，开箱即用，适合快速测试与脚本集成。</p>
       </div>
       <div class="integration-card glass-card">
-        <div class="integration-icon">📦</div>
+        <div class="integration-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="34" height="34" aria-hidden="true"><path d="M3 8 12 3l9 5"/><path d="m3 8 9 5 9-5"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
         <h3 class="integration-title">多语言 SDK</h3>
         <p class="integration-description">提供 Python, Node.js, Go 等主流语言 SDK，类型安全，调用便捷。</p>
       </div>
       <div class="integration-card glass-card">
-        <div class="integration-icon">🧩</div>
+        <div class="integration-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="34" height="34" aria-hidden="true"><path d="M12 3v3.5a1.5 1.5 0 0 0 3 0V4h5v5h-2.5a1.5 1.5 0 0 0 0 3H21v6.5a1.5 1.5 0 0 1-1.5 1.5H13v-3a1.5 1.5 0 0 0-3 0v3H3v-6.5a1.5 1.5 0 0 1 1.5-1.5H7a1.5 1.5 0 0 0 0-3H4V4h8Z"/></svg></div>
         <h3 class="integration-title">IDE 插件</h3>
         <p class="integration-description">深度集成 VS Code 与 JetBrains IDE，在编码环境中直接使用 AI 能力。</p>
       </div>
@@ -565,9 +578,16 @@ html[data-theme="dark"] .home-page {
 }
 
 .integration-icon {
-  font-size: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(220, 210, 195, 0.5));
+  border: 1px solid rgba(35, 28, 21, 0.08);
+  color: var(--ink, #161311);
   margin-bottom: 1.5rem;
-  display: inline-block;
   transition: transform 0.3s ease;
 }
 

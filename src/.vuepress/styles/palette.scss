@@ -1,7 +1,10 @@
-// Brand Colors - Right Code
-// 主题色（橙）：#e06b31
-$theme-color: #e06b31;
+// Brand palette — 沿用 4i.codes 首页米黄墨色调
+// paper #efe8df / ink #161311 / accent 深墨
 
-// You can also override other variables if needed
-// $home-page-width: 1200px;
-// $content-width: 1200px;
+// 主题色 (用作链接、选中态、code inline 强调等)
+$theme-color: #2a221a;
+
+// 内容区最大宽度 (可选微调)
+// $content-width: 1120px;
+
+// 侧栏胶囊风格所需变量

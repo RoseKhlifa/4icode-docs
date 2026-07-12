@@ -1,6 +1,6 @@
 {
-  "name": "rcode-docs",
-  "description": "A doc project for Right Code",
+  "name": "4icode-docs",
+  "description": "A doc project for 4i.codes",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -18,6 +18,5 @@
     "vue": "^3.5.26",
     "vuepress": "2.0.0-rc.26",
     "vuepress-theme-hope": "2.0.0-rc.102"
-  },
-  "packageManager": "yarn@4.12.0"
+  }
 }

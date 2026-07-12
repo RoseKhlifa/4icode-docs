@@ -169,7 +169,7 @@
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 
 // 根据环境选择 API 基础地址
-const BASE_URL = import.meta.env.DEV ? '/rc-api' : 'https://right.codes'
+const BASE_URL = import.meta.env.DEV ? '/4i-api' : 'https://4i.codes'
 
 const apiKey = ref('')
 const showApiKey = ref(false)
@@ -323,7 +323,7 @@ function generateCurl(api) {
   if (api.id === 'codex') {
     const endpoint = api.endpoints.find(e => e.name === api.selectedEndpoint)
     if (api.selectedEndpoint === 'responses') {
-      return `curl https://www.right.codes${endpoint.path} \\
+      return `curl https://www.4i.codes${endpoint.path} \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ${key}' \\
   -d '{
@@ -343,7 +343,7 @@ function generateCurl(api) {
     "stream": true
   }'`
     } else {
-      return `curl https://www.right.codes${endpoint.path} \\
+      return `curl https://www.4i.codes${endpoint.path} \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ${key}' \\
   -d '{
@@ -358,7 +358,7 @@ function generateCurl(api) {
   }'`
     }
   } else if (api.id === 'claude') {
-    return `curl https://www.right.codes/claude/v1/messages \\
+    return `curl https://www.4i.codes/claude/v1/messages \\
   -H 'Content-Type: application/json' \\
   -H 'x-api-key: ${key}' \\
   -d '{
@@ -380,7 +380,7 @@ function generateCurl(api) {
   }'`
   } else if (api.id === 'gemini') {
     const method = useStream ? 'streamGenerateContent?alt=sse' : 'generateContent'
-    return `curl --location 'https://right.codes/gemini/v1beta/models/${api.selectedModel}:${method}' \\
+    return `curl --location 'https://4i.codes/gemini/v1beta/models/${api.selectedModel}:${method}' \\
 --header 'connection: keep-alive' \\
 --header 'x-goog-api-key: ${key}' \\
 --header 'content-type: application/json' \\
@@ -542,13 +542,13 @@ function clearResponse() {
 function getRequestUrl(api) {
   if (api.id === 'codex') {
     const endpoint = api.endpoints.find(e => e.name === api.selectedEndpoint)
-    return `https://www.right.codes${endpoint.path}`
+    return `https://www.4i.codes${endpoint.path}`
   } else if (api.id === 'claude') {
-    return 'https://www.right.codes/claude/v1/messages'
+    return 'https://www.4i.codes/claude/v1/messages'
   } else if (api.id === 'gemini') {
     const useStream = isStreamOnly(api) ? true : api.stream
     const method = useStream ? 'streamGenerateContent?alt=sse' : 'generateContent'
-    return `https://right.codes/gemini/v1beta/models/${api.selectedModel}:${method}`
+    return `https://4i.codes/gemini/v1beta/models/${api.selectedModel}:${method}`
   }
   return ''
 }
@@ -563,8 +563,8 @@ function getRequestUrl(api) {
   --text-primary: #1d1d1f;
   --text-secondary: #86868b;
   --border-color: rgba(0, 0, 0, 0.1);
-  --accent-color: var(--theme-color, #e06b31);
-  --accent-hover: var(--rc-brand-light, #f07a3f);
+  --accent-color: var(--theme-color, #2a221a);
+  --accent-hover: var(--rc-brand-light, #3d3226);
   --input-bg: rgba(255, 255, 255, 0.8);
   --code-bg: rgba(30, 30, 30, 0.95);
   --code-header-bg: rgba(45, 45, 45, 0.95);
@@ -582,8 +582,8 @@ function getRequestUrl(api) {
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1a6;
   --border-color: rgba(255, 255, 255, 0.1);
-  --accent-color: var(--theme-color, #e06b31);
-  --accent-hover: var(--rc-brand-lighter, #ff9a66);
+  --accent-color: var(--theme-color, #2a221a);
+  --accent-hover: var(--rc-brand-lighter, #4e4030);
   --input-bg: rgba(44, 44, 46, 0.8);
   --code-bg: rgba(0, 0, 0, 0.6);
   --code-header-bg: rgba(28, 28, 30, 0.8);
@@ -643,7 +643,7 @@ function getRequestUrl(api) {
 .api-key-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(22, 19, 17, 0.14));
 }
 
 .api-key-input::placeholder {
@@ -741,7 +741,7 @@ function getRequestUrl(api) {
 .model-select:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(22, 19, 17, 0.14));
 }
 
 /* 请求地址样式 */
@@ -862,7 +862,7 @@ function getRequestUrl(api) {
 .message-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(224, 107, 49, 0.18));
+  box-shadow: 0 0 0 3px var(--rc-brand-tint, rgba(22, 19, 17, 0.14));
 }
 
 .message-input::placeholder {
@@ -889,13 +889,13 @@ function getRequestUrl(api) {
   font-size: 15px;
   font-weight: 600;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 10px rgba(224, 107, 49, 0.28);
+  box-shadow: 0 2px 10px rgba(22, 19, 17, 0.28);
 }
 
 .test-btn:hover:not(:disabled) {
   background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(224, 107, 49, 0.38);
+  box-shadow: 0 6px 16px rgba(22, 19, 17, 0.38);
 }
 
 .test-btn:disabled {

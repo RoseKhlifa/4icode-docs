@@ -1,28 +1,30 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
-import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://4i.codes",
 
   author: {
-    name: "Right Code",
-    url: "https://right.codes",
+    name: "4i.codes",
+    url: "https://4i.codes",
   },
 
-  logo: "/logo.webp",
-  repo:"1198722360/rcdoc",
+  logo: "/logo.png",
   docsDir: "src/docs",
 
-  // 导航栏
-  navbar,
+  // 隐藏 hope 默认 navbar; 我们用自定义顶栏胶囊
+  navbar: false,
+
+  // 只保留浅色模式(顶栏太阳按钮仅做占位交互)
+  darkmode: "disable",
 
   // 侧边栏
   sidebar,
 
-  // 页脚
-  footer: "Copyright © 2026-present Right Code",
+  // 页脚: 版权 + 原仓库致谢
+  footer:
+    'Copyright © 2026 4i.codes · Docs built on <a href="https://github.com/1198722360/rcdoc" target="_blank" rel="noopener">rcdoc</a>',
   displayFooter: true,
 
   // 多语言配置
