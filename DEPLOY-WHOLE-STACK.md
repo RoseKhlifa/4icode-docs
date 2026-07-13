@@ -64,8 +64,10 @@ tar --exclude='1/_rebrand*.py' \
 # 本地
 scp G:/TOKEN/4icode/4icode-landing.tar.gz root@<IP>:/tmp/
 
-# 服务器 (1Panel 建站后, 站点根目录会是这个)
-cd /opt/1panel/apps/openresty/openresty/www/sites/4i.codes/index
+# 服务器 - 1Panel 建站后, 站点根目录在这里
+# ⚠ 1Panel 的 openresty 跑在容器里, 只有 /opt/1panel/www/sites/<domain>/
+#   会被挂进容器. 别把文件放宿主机的 /var/www 或 /root, 容器里读不到.
+cd /opt/1panel/www/sites/4i.codes/index
 rm -f index.html   # 清 1Panel 默认 welcome
 tar -xzf /tmp/4icode-landing.tar.gz --strip-components=1
 ls -la              # 应看到 index.html about.html contact.html policy.html assets/
@@ -74,8 +76,9 @@ ls -la              # 应看到 index.html about.html contact.html policy.html a
 ### 1.3 权限
 
 ```bash
-chown -R www:www /opt/1panel/apps/openresty/openresty/www/sites/4i.codes/index \
-  2>/dev/null || chown -R nobody:nobody /opt/1panel/apps/openresty/openresty/www/sites/4i.codes/index
+# 1Panel 容器内 nginx worker 是 UID 1000, 必须 chown 到 1000:1000
+chown -R 1000:1000 /opt/1panel/www/sites/4i.codes/index
+chmod -R 755 /opt/1panel/www/sites/4i.codes/index
 ```
 
 ---
@@ -92,14 +95,30 @@ yarn install         # 3-5 分钟
 yarn docs:build      # 产物在 src/.vuepress/dist/
 ```
 
-### 2.2 复制到 nginx 可读目录
+### 2.2 复制到 1Panel 站点目录 (容器可读)
+
+> ⚠ **1Panel 的 OpenResty 跑在容器里**, 只有 `/opt/1panel/www/sites/<domain>/` 这个目录
+> 被挂进容器. 放到 `/var/www/xxx` 或者 `/root/xxx` 都**在容器里看不到**, nginx 会 404.
+>
+> docs 必须放到 landing 站点目录下的 `doc/` 子目录:
+> `/opt/1panel/www/sites/4i.codes/doc/`
 
 ```bash
-mkdir -p /var/www/4icode-docs
-rm -rf /var/www/4icode-docs/*
-cp -r /root/docs/src/.vuepress/dist/* /var/www/4icode-docs/
-chown -R www:www /var/www/4icode-docs 2>/dev/null || chown -R nobody:nobody /var/www/4icode-docs
-chmod -R 755 /var/www/4icode-docs
+# 1. 创建目标目录
+mkdir -p /opt/1panel/www/sites/4i.codes/doc
+
+# 2. 清空旧文件 (更新时也用这一句)
+rm -rf /opt/1panel/www/sites/4i.codes/doc/*
+
+# 3. 复制 VuePress build 产物
+cp -r /root/docs/src/.vuepress/dist/* /opt/1panel/www/sites/4i.codes/doc/
+
+# 4. 权限: 1Panel 容器里 nginx worker 是 UID 1000, 必须 chown 到 1000:1000
+chown -R 1000:1000 /opt/1panel/www/sites/4i.codes/doc
+chmod -R 755 /opt/1panel/www/sites/4i.codes/doc
+
+# 5. 验证 (期望能看到 index.html)
+ls /opt/1panel/www/sites/4i.codes/doc/ | head
 ```
 
 ### 2.3 更新流程
@@ -109,8 +128,9 @@ cd /root/docs
 git pull
 yarn install --frozen-lockfile
 yarn docs:build
-rm -rf /var/www/4icode-docs/*
-cp -r src/.vuepress/dist/* /var/www/4icode-docs/
+rm -rf /opt/1panel/www/sites/4i.codes/doc/*
+cp -r src/.vuepress/dist/* /opt/1panel/www/sites/4i.codes/doc/
+chown -R 1000:1000 /opt/1panel/www/sites/4i.codes/doc
 # 静态文件, 无需 reload nginx
 ```
 
@@ -236,11 +256,25 @@ pm2 logs 4icode-status --lines 20 --nostream         # 确认无错
     # ============================================
     # [2] 文档站 (VuePress 静态产物)
     # ============================================
-    # ⚠ alias 值末尾必须带 /
+    # ⚠ 关键: 1Panel 的 openresty 跑在容器里, 只能读到
+    #    /opt/1panel/www/sites/<domain>/ 这个挂载目录. 所以 docs 产物必须放到
+    #    /opt/1panel/www/sites/4i.codes/doc/ 下面 (见 §2.2), root 指向站点根即可.
+    # ⚠ 不要用 alias /var/www/xxx —— 那是宿主机路径, 容器里不存在, 会 404.
+    # ⚠ 也不要 alias + try_files ... /doc/index.html —— 会触发 nginx rewrite cycle 报 500.
+    location = /doc {
+        return 301 /doc/;
+    }
     location /doc/ {
-        alias /var/www/4icode-docs/;
+        # 让 nginx 去站点根 /www/sites/4i.codes 下寻找 doc/ 子目录
+        # (容器内路径, 1Panel 已经把宿主机 /opt/1panel/www 挂到容器 /www)
+        root /www/sites/4i.codes;
+        index index.html;
         # VuePress 干净 URL 支持: /doc/quick_start/intro -> /doc/quick_start/intro.html
+        # 最后 fallback 到 /doc/index.html 让前端 SPA 路由接管刷新
         try_files $uri $uri.html $uri/ /doc/index.html;
+        expires 7d;
+        add_header Cache-Control "public";
+        add_header Vary Accept-Encoding;
     }
 
     # ============================================
@@ -364,9 +398,28 @@ curl -I https://4i.codes/status/admin/login         # 200
 
 ## 6. 常见坑速查
 
+> ⚠ **1Panel OpenResty 是容器,不要放宿主机随便什么目录!**
+>
+> 1Panel 装的 OpenResty 跑在 docker 容器里, **只有 `/opt/1panel/www/sites/`
+> 这个目录被挂进容器**. 你把静态文件放到 `/var/www/xxx`、`/root/xxx`
+> 或者别的宿主机路径, `ls` 能看到, `nginx -t` 也没报错, 但请求会:
+>
+> - 用 `alias /var/www/xxx/` 配 → 容器里目录不存在, `try_files` 全 fail →
+>   fallback 到 `/doc/index.html` 又走 location matching → **rewrite cycle 500**
+> - 用 `root /var/www` 配 → **直接 404**
+>
+> **正确姿势**: 所有静态资源都放到 `/opt/1panel/www/sites/4i.codes/` 下面
+> (对应容器里 `/www/sites/4i.codes/`), nginx conf 里用 `root /www/sites/4i.codes;`.
+> 然后 `chown -R 1000:1000 <dir>` (容器 nginx worker 是 UID 1000).
+
+---
+
+
 | 症状 | 原因 | 解决 |
 |---|---|---|
-| `/doc/` 404 | alias 路径少 `/` 或产物没复制 | `ls /var/www/4icode-docs/index.html`, alias 值 `/var/www/4icode-docs/` |
+| `/doc/` **500** (`rewrite or internal redirection cycle`) | `alias` + `try_files ... /doc/index.html` 组合 → 内部重定向回自己无限循环 | 别用 alias, 改用 `root /www/sites/4i.codes;` (见 §4 [2]) |
+| `/doc/` **404** 但文件在宿主机 `/var/www/xxx/` 或 `/root/xxx/` 里 | 1Panel openresty 是**容器**, 只挂了 `/opt/1panel/www/sites/`, 其他宿主机路径容器里根本看不到 | 把产物复制到 `/opt/1panel/www/sites/4i.codes/doc/` 并 `chown -R 1000:1000` (见 §2.2) |
+| `/doc/` 404 且文件确实在 `/opt/1panel/www/sites/4i.codes/doc/` | 权限问题, 容器里 nginx worker 是 UID 1000, 但文件属主是 root | `chown -R 1000:1000 /opt/1panel/www/sites/4i.codes/doc` |
 | `/doc/quick_start/intro` 404 但 `.html` 后缀能开 | `try_files` 缺 `$uri.html` | 用本文档给的完整 try_files |
 | `/status/` 502 | pm2 没起 或 8800 没监听 | `pm2 status`, `ss -tlnp \| grep 8800` |
 | `/status/` 打开是白屏, 控制台 `Unexpected token '<'` 一堆 | Next `basePath` 没设 或 nginx `proxy_pass` 有末尾 `/` 把前缀剥掉 | 1) `export STATUS_BASE_PATH=/status && npm run build`;<br/>2) `STATUS_BASE_PATH=/status pm2 restart 4icode-status --update-env`;<br/>3) nginx: `proxy_pass http://127.0.0.1:8800` (末尾**不带** `/`) |
@@ -402,9 +455,16 @@ cd /root/docs
 git pull
 yarn install --frozen-lockfile
 yarn docs:build
-rm -rf /var/www/4icode-docs/*
-cp -r src/.vuepress/dist/* /var/www/4icode-docs/
-chown -R www:www /var/www/4icode-docs 2>/dev/null || true
+
+# 复制到 1Panel 站点目录 (容器可读). 不要复制到 /var/www/xxx —— 1Panel openresty
+# 是容器, 只挂了 /opt/1panel/www/sites/, 别的宿主机路径容器里读不到.
+DOC_DIR=/opt/1panel/www/sites/4i.codes/doc
+mkdir -p "$DOC_DIR"
+rm -rf "$DOC_DIR"/*
+cp -r src/.vuepress/dist/* "$DOC_DIR/"
+chown -R 1000:1000 "$DOC_DIR"     # 1Panel 容器里 nginx worker = UID 1000
+chmod -R 755 "$DOC_DIR"
+
 echo "✅ docs 已更新: $(date)"
 ```
 

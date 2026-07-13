@@ -617,14 +617,133 @@ html[data-theme="dark"] .home-page {
     padding: 2rem;
     width: 100%;
   }
-  
+
   .divider {
     width: 40px;
     height: 1px;
   }
-  
+
   .hero-title {
     font-size: 3rem;
+  }
+}
+
+/* ============================================================
+ * 手机端 (≤ 720px) 全面适配 —— 顶栏胶囊双行约 90px, 内容让 100px
+ * ============================================================ */
+@media (max-width: 720px) {
+  .hero {
+    padding: 100px 16px 40px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-logo {
+    width: 84px;
+    height: 84px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    margin-top: 12px;
+  }
+
+  .hero-description {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin-top: 16px;
+    padding-inline: 4px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 28px;
+    padding-inline: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.92rem;
+    padding: 12px 18px;
+  }
+
+  .hero-stats {
+    margin-top: 32px;
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  /* Features grid → 单列 */
+  .features-section {
+    padding: 60px 16px;
+  }
+
+  .features-grid,
+  .cta-grid,
+  .stats-grid,
+  .use-cases-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .feature-card,
+  .cta-card,
+  .use-case-card {
+    padding: 24px 20px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+
+  .cta-section {
+    padding: 48px 16px;
+  }
+
+  /* 背景装饰缩小, 防溢出屏幕产生横向滚动 */
+  .gradient-orb {
+    filter: blur(60px);
+  }
+
+  .orb-1,
+  .orb-2,
+  .orb-3 {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-logo {
+    width: 72px;
+    height: 72px;
   }
 }
 </style>

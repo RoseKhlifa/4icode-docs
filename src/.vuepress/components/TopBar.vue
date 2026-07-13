@@ -220,62 +220,75 @@ html[data-theme="dark"] {
 }
 
 @media (max-width: 720px) {
+  /* 手机版胶囊: 双行紧凑, 与 landing/status 完全一致
+   * 第 1 行 = brand
+   * 第 2 行 = 5 项 nav 等分 + 主题按钮 */
   .ficodes-topbar {
-    top: 10px;
+    top: 8px;
     left: 3%;
     right: 3%;
   }
   .ficodes-topbar-inner {
-    padding: 8px 12px 8px 10px;
-    gap: 10px;
-    border-radius: 20px;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 18px;
+    flex-wrap: unset;
   }
   .ficodes-topbar-brand {
-    gap: 10px;
+    gap: 8px;
     min-width: 0;
-    flex: 1 1 auto;
   }
   .ficodes-topbar-logo {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
   }
   .ficodes-topbar-brand-name {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
   }
   .ficodes-topbar-nav {
-    gap: 10px 14px;
-    flex: 1 0 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 5px;
     border-top: 1px solid rgba(35, 28, 21, 0.08);
+    flex-wrap: nowrap;
   }
   .ficodes-topbar-nav > a {
-    font-size: 0.82rem;
-    padding: 2px 0;
-    letter-spacing: 0.04em;
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+    padding: 4px 2px;
+    flex: 1 1 0;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 0;
   }
   .ficodes-topbar-theme {
-    width: 30px;
-    height: 30px;
+    flex: 0 0 auto;
+    margin-left: 6px;
+    width: 26px;
+    height: 26px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
   }
 
-  /* 内容区避让高度也要跟着涨 (顶栏折成两行) */
+  /* 内容区避让 (顶栏双行约 90px, 留 100px) */
   .vp-page,
   .vp-blog-page,
   .vp-sidebar,
   .vp-toc {
-    padding-top: 96px !important;
+    padding-top: 100px !important;
   }
 }
 
 @media (max-width: 400px) {
-  .ficodes-topbar-brand-name {
-    font-size: 0.88rem;
-  }
   .ficodes-topbar-nav > a {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
 }
 </style>

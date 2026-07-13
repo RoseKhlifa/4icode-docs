@@ -273,3 +273,40 @@ html[data-theme="dark"] .vp-page .advantage-grid .advantage-icon {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+
+// ----------------------------------------------------------------
+// Mobile fixes (≤ 720px)
+//
+// - 文档正文里很多 <img width="600">, 手机上会强制横向滚
+// - hope 主题 sidebar 在手机上默认是抽屉, 已经好
+// - 内容区左右 padding 需要收
+// ----------------------------------------------------------------
+@media (max-width: 720px) {
+  // 所有正文图片强制自适应宽度, 忽略 <img width="600">
+  .vp-page img,
+  .theme-hope-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  // 表格允许横向滚动, 不撑破容器
+  .vp-page .table-wrapper,
+  .theme-hope-content .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // 内容区左右 padding 收
+  .vp-page:not(:has(.home-page)) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  // 长代码行允许横向滚
+  div[class*="language-"] pre,
+  div[data-highlighter="shiki"] pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
