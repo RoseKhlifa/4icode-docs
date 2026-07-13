@@ -19,6 +19,13 @@ export default hopeTheme({
   // 只保留浅色模式(顶栏太阳按钮仅做占位交互)
   darkmode: "disable",
 
+  // 页面元信息全关: 不显示"最近更新时间 / 贡献者 / 在 GitHub 上编辑此页"
+  // (contributors 会读 git log author, 之前 commit 用了 Co-Authored-By
+  //  就会把 AI 名字打到页面上, 直接关掉最省心)
+  lastUpdated: false,
+  contributors: false,
+  editLink: false,
+
   // 侧边栏
   sidebar,
 
