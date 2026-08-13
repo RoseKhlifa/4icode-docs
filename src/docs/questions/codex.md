@@ -1,5 +1,5 @@
 ---
-title: Codex 相关疑问
+title: Codex 常见问题
 icon: hugeicons:chat-gpt
 order: 1
 footer: false

@@ -1,6 +1,6 @@
 ---
-title: 通用配置步骤
-icon: hugeicons:configuration-01
+title: 接入前准备
+icon: material-symbols:checklist
 order: 4
 footer: false
 ---

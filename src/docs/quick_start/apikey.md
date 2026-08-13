@@ -1,6 +1,6 @@
 ---
-title: ApiKey 管理
-icon: mdi:key
+title: API Key 与权限
+icon: material-symbols:key-outline
 order: 3
 footer: false
 ---

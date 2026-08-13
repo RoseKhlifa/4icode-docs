@@ -1,5 +1,5 @@
 ---
-title: 在 CherryStudio 中配置使用
+title: Cherry Studio 接入
 icon: /assets/icon/cherrystudio/cherrystudio.png
 order: 1
 footer: false

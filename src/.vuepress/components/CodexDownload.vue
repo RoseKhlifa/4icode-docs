@@ -5,7 +5,7 @@
         <svg class="codex-download__tag-icon" viewBox="0 0 16 16" fill="currentColor">
           <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v4.586a1.5 1.5 0 0 0 .44 1.06l5.953 5.954a1.5 1.5 0 0 0 2.121 0l4.586-4.586a1.5 1.5 0 0 0 0-2.121L8.146 1.44A1.5 1.5 0 0 0 7.086 1H2.5zM5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
         </svg>
-        当前支持的Codex插件版本 v{{ version }}
+        {{ locale === 'en' ? 'Supported Codex extension version' : '当前支持的 Codex 插件版本' }} v{{ version }}
       </span>
     </div>
     <div class="codex-download__summary">
@@ -27,7 +27,7 @@
         </svg>
         <div class="codex-download__file-meta">
           <span class="codex-download__file-name">{{ fileName }}</span>
-          <span class="codex-download__file-size">ZIP 压缩包</span>
+          <span class="codex-download__file-size">{{ locale === 'en' ? 'ZIP archive' : 'ZIP 压缩包' }}</span>
         </div>
       </div>
       <a class="codex-download__btn" :href="downloadUrl" download>
@@ -37,7 +37,7 @@
           <polyline points="7 10 12 15 17 10" />
           <line x1="12" y1="15" x2="12" y2="3" />
         </svg>
-        立即下载
+        {{ locale === 'en' ? 'Download' : '立即下载' }}
       </a>
     </div>
   </div>
@@ -49,6 +49,7 @@ const props = defineProps({
   summary: { type: String, default: '下载以下替换文件，解压后将 JS 文件复制到 webview\\assets 目录中覆盖原文件，重启 VSCode 即可使用最新模型。' },
   fileName: { type: String, default: 'vscode-codex-replace.zip' },
   downloadUrl: { type: String, default: '/doc/assets/file/codex/vscode-codex-replace.zip' },
+  locale: { type: String, default: 'zh' },
 })
 </script>
 

@@ -1,6 +1,6 @@
 ---
-title: 4i.codes 简介
-icon: fluent-mdl2:web-environment
+title: 认识 4i.codes
+icon: material-symbols:domain
 order: 1
 footer: false
 ---

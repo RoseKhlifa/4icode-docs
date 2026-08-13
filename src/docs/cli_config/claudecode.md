@@ -1,6 +1,6 @@
 ---
-title: 手动配置Claude Code
-icon: hugeicons:configuration-01
+title: Claude Code 接入
+icon: material-icon-theme:claude
 order: 2
 footer: false
 ---

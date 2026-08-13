@@ -4,6 +4,64 @@
 // 主题色 (用作链接、选中态、code inline 强调等)
 $theme-color: #2a221a;
 
+// Hope 基础色直接对齐 console 的暗色令牌，避免深蓝/紫色的默认主题感。
+$vp-c-bg: (
+  light: #fff,
+  dark: #0f100f,
+);
+$vp-c-bg-alt: (
+  light: #f6f6f7,
+  dark: #090a09,
+);
+$vp-c-bg-elv: (
+  light: #fff,
+  dark: #1f201e,
+);
+$vp-c-text: (
+  light: rgb(60 60 67),
+  dark: rgb(241 237 231 / 92%),
+);
+$vp-c-border: (
+  light: #c2c2c4,
+  dark: #45453f,
+);
+$vp-c-divider: (
+  light: #e2e2e3,
+  dark: #292a27,
+);
+$vp-c-shadow: (
+  light: rgb(0 0 0 / 15%),
+  dark: rgb(0 0 0 / 42%),
+);
+$vp-c-control: (
+  light: rgb(142 150 170 / 10%),
+  dark: rgb(114 170 179 / 12%),
+);
+$vp-c-control-hover: (
+  light: rgb(142 150 170 / 16%),
+  dark: rgb(114 170 179 / 18%),
+);
+$vp-c-control-disabled: (
+  light: #eaeaea,
+  dark: #30322f,
+);
+$vp-c-accent: (
+  light: #6e5944,
+  dark: #72aab3,
+);
+$vp-c-accent-bg: (
+  light: #8e7358,
+  dark: #72aab3,
+);
+$vp-c-accent-hover: (
+  light: #9d7f61,
+  dark: #9bc8ce,
+);
+$vp-c-accent-soft: (
+  light: rgb(183 102 20 / 14%),
+  dark: rgb(114 170 179 / 16%),
+);
+
 // 内容区最大宽度 (可选微调)
 // $content-width: 1120px;
 

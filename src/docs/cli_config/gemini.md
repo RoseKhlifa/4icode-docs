@@ -1,5 +1,5 @@
 ---
-title: 手动配置Gemini
+title: Gemini CLI 接入
 icon: vscode-icons:file-type-gemini
 order: 4
 footer: false

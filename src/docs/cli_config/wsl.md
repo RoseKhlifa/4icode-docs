@@ -1,5 +1,5 @@
 ---
-title: Windows 系统下配置 WSL 运行 AI 终端
+title: WSL 环境设置
 icon: /wsl2-logo.svg
 order: 1
 footer: false

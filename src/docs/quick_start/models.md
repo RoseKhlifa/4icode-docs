@@ -1,6 +1,6 @@
 ---
-title: 渠道链接与模型列表
-icon: fluent-mdl2:web-environment
+title: 服务分组与模型
+icon: material-symbols:hub-outline
 order: 3
 footer: false
 ---

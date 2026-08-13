@@ -2,8 +2,8 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   {
-    text: "快速开始",
-    icon: "rocket",
+    text: "入门指南",
+    icon: "compass",
     link: "/docs/quick_start/intro.html",
   },
   {

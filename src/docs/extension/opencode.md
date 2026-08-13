@@ -1,5 +1,5 @@
 ---
-title: 在 OpenCode 中配置使用
+title: OpenCode 接入
 icon: /assets/icon/opencode/opencode.jpg
 order: 1
 footer: false

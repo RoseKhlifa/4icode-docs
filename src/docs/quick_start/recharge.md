@@ -1,6 +1,6 @@
 ---
-title: 充值
-icon: fluent-mdl2:money
+title: 余额充值
+icon: material-symbols:account-balance-wallet-outline
 order: 2
 footer: false
 ---
@@ -41,8 +41,8 @@ footer: false
           <iconify-icon icon="hugeicons:chat-gpt" width="40" height="40"></iconify-icon>
         </div>
         <div class="payg-info">
-          <span class="payg-name">Codex</span>
-          <span class="payg-price">0.2 元/美金</span>
+          <span class="payg-name">Codex-稳定</span>
+          <span class="payg-price">约 0.45 元/美金</span>
         </div>
       </div>
       <div class="payg-card claude">
@@ -55,6 +55,7 @@ footer: false
         </div>
       </div>
     </div>
+    <p class="payg-note">价格会动态调整，请以站内实时价格为准。</p>
   </div>
 </div>
 
@@ -284,6 +285,14 @@ footer: false
   color: #161311;
 }
 
+.payg-note {
+  margin: 10px 2px 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: right;
+}
+
 [data-theme="dark"] .pricing-notice {
   background: linear-gradient(135deg, #1a3a4a 0%, #152d3a 100%);
   border-left-color: #161311;
@@ -356,5 +365,9 @@ footer: false
 
 [data-theme="dark"] .payg-name {
   color: #e8e8e8;
+}
+
+[data-theme="dark"] .payg-note {
+  color: #999;
 }
 </style>

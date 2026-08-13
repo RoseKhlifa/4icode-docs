@@ -16,8 +16,8 @@ export default hopeTheme({
   // 隐藏 hope 默认 navbar; 我们用自定义顶栏胶囊
   navbar: false,
 
-  // 只保留浅色模式(顶栏太阳按钮仅做占位交互)
-  darkmode: "disable",
+  // 顶栏提供二态切换，主题状态由 Hope 统一管理。
+  darkmode: "toggle",
 
   // 页面元信息全关: 不显示"最近更新时间 / 贡献者 / 在 GitHub 上编辑此页"
   // (contributors 会读 git log author, 之前 commit 用了 Co-Authored-By
@@ -33,6 +33,15 @@ export default hopeTheme({
   footer:
     'Copyright © 2026 4i.codes · Docs built on <a href="https://github.com/1198722360/rcdoc" target="_blank" rel="noopener">rcdoc</a>',
   displayFooter: true,
+
+  locales: {
+    "/": {
+      lang: "zh-CN",
+    },
+    "/en/": {
+      lang: "en-US",
+    },
+  },
 
   // 多语言配置
   metaLocales: {
@@ -116,6 +125,10 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+    redirect: {
+      switchLocale: false,
+    },
+
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     // comment: {
     //   provider: "Giscus",

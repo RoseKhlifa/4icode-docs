@@ -1,6 +1,6 @@
 ---
-title: 画图接口
-icon: material-symbols:draw-outline
+title: 图像 API 概览
+icon: material-symbols:image-outline
 order: 0
 footer: false
 ---

@@ -1,5 +1,5 @@
 ---
-title: 在 Hermes Agent 中配置使用
+title: Hermes Agent 接入
 icon: streamline:command
 order: 4
 footer: false

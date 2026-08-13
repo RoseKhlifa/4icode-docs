@@ -1,6 +1,6 @@
 ---
-title: Curl 调用示例
-icon: si:pull-request-fill
+title: cURL 请求示例
+icon: material-symbols:data-object
 order: 1
 footer: false
 ---

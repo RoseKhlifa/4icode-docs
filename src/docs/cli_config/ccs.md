@@ -1,6 +1,6 @@
 ---
-title: 使用CC-Switch配置
-icon: hugeicons:configuration-01
+title: 通过 CC-Switch 导入配置
+icon: material-symbols:sync-alt
 order: 1
 footer: false
 ---
