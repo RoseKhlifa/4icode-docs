@@ -9,7 +9,7 @@ footer: false
 
 **使用 CC-Switch，您可以：**
 
-![](/assets/image/quick_start/rc-0.webp)
+![CC-Switch 供应商管理界面](/assets/image/quick_start/cc-switch-overview.png)
 
 - 一键切换 API 配置 - 在多个 API 提供商之间快速切换
 - 可视化配置管理 - 通过图形界面轻松管理所有配置

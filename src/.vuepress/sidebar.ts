@@ -62,6 +62,11 @@ export default sidebar({
           link: "claudecode.md",
         },
         {
+          text: "Claude Code 接入 GPT 模型",
+          icon: "material-symbols:route",
+          link: "claude-gpt.md",
+        },
+        {
           text: "Codex 接入",
           icon: "hugeicons:chat-gpt",
           link: "codex.md",
@@ -158,6 +163,7 @@ export default sidebar({
       children: [
         { text: "Import with CC-Switch", icon: "material-symbols:sync-alt", link: "ccs.md" },
         { text: "Claude Code", icon: "material-icon-theme:claude", link: "claudecode.md" },
+        { text: "Use GPT Models in Claude Code", icon: "material-symbols:route", link: "claude-gpt.md" },
         { text: "Codex", icon: "hugeicons:chat-gpt", link: "codex.md" },
         { text: "Gemini CLI", icon: "vscode-icons:file-type-gemini", link: "gemini.md" },
         { text: "Set Up WSL", icon: "/wsl2-logo.svg", link: "wsl.md" },
