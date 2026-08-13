@@ -37,7 +37,7 @@ Then add your key to `~/.hermes/.env`:
 OPENAI_API_KEY=YOUR_4ICODES_KEY
 ```
 
-Create a key first if needed: [API Keys and Access](/en/docs/quick_start/apikey.html).
+Create a key first if needed: [API Keys and Access](../quick_start/apikey.html).
 
 ## 3. Apply the cache compatibility patch
 

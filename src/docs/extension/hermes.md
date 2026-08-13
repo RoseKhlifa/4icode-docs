@@ -12,7 +12,7 @@ footer: false
 :::important
 如果你是 Windows 用户，请先进入 WSL 再继续。Hermes 不支持 Windows 原生命令行安装。
 
-如果你还没有装 WSL，先看 [WSL 配置](/docs/extension/wsl.html)。
+如果你还没有装 WSL，先看 [WSL 配置](../cli_config/wsl.html)。
 :::
 
 这一页只讲本地命令行直接运行 `hermes` 的用法， Feishu、Telegram、托管部署这些内容可以让hermes本身帮你配置。
@@ -75,15 +75,13 @@ xdg-open "$HOME/.hermes"
 :::
 
 如果这条命令没有反应，也可以直接用文件管理器手动打开 `~/.hermes`。
-<img width="848" height="551" alt="image" src="https://github.com/user-attachments/assets/269b9fdf-afe6-400a-8a62-5dd74ea63b13" />
-
 
 然后先打开 `config.yaml`，把模型这一段改成下面这样：
 
 ```yaml
 model:
   provider: custom
-  default: gpt-5.4-xhigh
+  default: gpt-5.6-sol
   base_url: https://api.4i.codes
   api_mode: chat_completions
 ```
@@ -102,7 +100,7 @@ OPENAI_API_KEY=你的 4i.codes Key
 
 如果这个文件里已经有 `OPENAI_API_KEY`，就把它改成你这次要用的 Key。
 
-如果你还没有 Key，可以先看 [ApiKey 管理](/docs/quick_start/apikey.html)。
+如果你还没有 Key，可以先看 [ApiKey 管理](../quick_start/apikey.html)。
 
 ## 第三步：打上缓存兼容补丁（暂时只支持GPT Codex组）
 
@@ -133,9 +131,6 @@ hermes
 
 进去以后，先问一个简单问题，比如：
 
-<img width="1876" height="950" alt="image" src="https://github.com/user-attachments/assets/e988357c-f0e7-46ee-8959-f4c505ef3b10" />
-
-
 ```text
 请用三句话介绍一下hermes 是做什么的。
 ```
@@ -158,5 +153,5 @@ hermes
 
 需要继续看 Key 或模型信息的话，可以接着看：
 
-1. [ApiKey 管理](/docs/quick_start/apikey.html)
-2. [渠道与模型](/docs/quick_start/models.html)
+1. [ApiKey 管理](../quick_start/apikey.html)
+2. [渠道与模型](../quick_start/models.html)

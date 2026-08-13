@@ -16,7 +16,7 @@ curl https://api.4i.codes/v1/responses \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
-    "model": "gpt-5.2",
+    "model": "gpt-5.6-sol",
     "input": [
       {
         "type": "message",
@@ -44,7 +44,7 @@ curl https://api.4i.codes/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {此处填写ApiKey}' \
   -d '{
-    "model": "gpt-5.2",
+    "model": "gpt-5.6-sol",
     "messages": [
       {
         "role": "user",
@@ -68,7 +68,7 @@ curl https://api.4i.codes/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {此处填写ApiKey}' \
   -d '{
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-opus-4-8",
     "messages": [
       {
         "role": "user",
@@ -91,24 +91,6 @@ curl https://api.4i.codes/v1/messages \
 
 ### Gemini
 
-```bash
-curl --location 'https://api.4i.codes/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse' \
---header 'connection: keep-alive' \
---header 'x-goog-api-key: {此处填写ApiKey}' \
---header 'content-type: application/json' \
---data '{
-    "generationConfig": {
-        "temperature": 1
-    },
-    "contents": [
-        {
-            "role": "user",
-            "parts": [
-                {
-                    "text": "你好"
-                }
-            ]
-        }
-    ]
-}'
-```
+::: warning 待接入，尚未开放
+4i.codes 暂未接入 Gemini 模型，因此目前没有可用的 Gemini cURL 请求示例。请等待后续公告。
+:::

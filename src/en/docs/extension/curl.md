@@ -48,7 +48,7 @@ curl https://api.4i.codes/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: YOUR_API_KEY' \
   -d '{
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-opus-4-8",
     "messages": [{
       "role": "user",
       "content": [{ "type": "text", "text": "Hello", "cache_control": { "type": "ephemeral" } }]
@@ -62,12 +62,6 @@ Both `Authorization: Bearer` and `x-api-key` authentication headers are supporte
 
 ## Gemini
 
-```bash
-curl --location 'https://api.4i.codes/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse' \
-  --header 'x-goog-api-key: YOUR_API_KEY' \
-  --header 'content-type: application/json' \
-  --data '{
-    "generationConfig": { "temperature": 1 },
-    "contents": [{ "role": "user", "parts": [{ "text": "Hello" }] }]
-  }'
-```
+::: warning Integration pending, not yet available
+4i.codes has not yet integrated Gemini models, so there is currently no working Gemini cURL example. Please wait for a future announcement.
+:::

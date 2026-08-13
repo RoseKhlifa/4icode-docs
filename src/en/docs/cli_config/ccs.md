@@ -9,6 +9,8 @@ footer: false
 
 CC-Switch manages API providers for Codex, Claude Code, and Gemini CLI. It can import providers, switch configurations, manage MCP servers, and run a local proxy.
 
+![](/assets/image/quick_start/rc-0.webp)
+
 ### Install CC-Switch
 
 Download the latest release from the [CC-Switch website](https://ccswitch.io/en/download) or [GitHub Releases](https://github.com/farion1231/cc-switch/releases/latest).

@@ -34,7 +34,7 @@ footer: false
 
 登录 4i.codes，进入 [API Key 管理](https://4i.codes/console/keys)，点击 `创建新 Key`。
 
-填写 Key 名称并选择需要使用的服务分组，然后完成创建。还不了解 Key 权限时，可以先阅读 [ApiKey 管理](/docs/quick_start/apikey.html)。
+填写 Key 名称并选择需要使用的服务分组，然后完成创建。还不了解 Key 权限时，可以先阅读 [ApiKey 管理](../quick_start/apikey.html)。
 
 #### 第三步：一键导入到 CC-Switch
 
