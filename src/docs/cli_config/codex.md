@@ -69,7 +69,7 @@ model_verbosity = "high"
 
 [model_providers.rightcode]
 name = "rightcode"
-base_url = "https://4i.codes/codex/v1"
+base_url = "https://api.4i.codes"
 wire_api = "responses"
 requires_openai_auth = true
 ```

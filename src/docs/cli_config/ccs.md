@@ -13,61 +13,52 @@ footer: false
 
 - 一键切换 API 配置 - 在多个 API 提供商之间快速切换
 - 可视化配置管理 - 通过图形界面轻松管理所有配置
-- 内置 4i.codes 模板 - 预设了 4i.codes的配置模板
 - MCP 服务器管理 - 管理 Model Context Protocol 服务器
 - 系统托盘快捷操作 - 通过托盘菜单快速切换
 - 本地代理 - 支持热切换CC、CX、Gemini的供应商
 - 故障转移 - 全自动渠道故障转移
 
-> **目前CC-Switch 已经内置了 4i.codes 的快捷配置模板，无需手动编辑配置文件！**
-
 ### 软件下载
 
-> 访问 [CC Switch Download](https://github.com/farion1231/cc-switch/releases/latest) 页面下载最新的CC-Switch工具，在本地进行安装
+访问 [CC-Switch 官网](https://ccswitch.io/zh/download) 下载并安装最新版本。也可以前往 [GitHub Releases](https://github.com/farion1231/cc-switch/releases/latest) 下载。
 
 ![](/assets/image/quick_start/rc-9.webp)
 
-### 配置渠道商
+### 一键接入 4i.codes
 
-> **这一步以Codex的配置为例，CC与Gemini配置同理**
+#### 第一步：安装并启动 CC-Switch
 
-- **步骤一：**
-  - 打开软件，选择要配置的CLI
-  - 选择好CLI后，点击添加供应商进行配置
+完成安装后启动 CC-Switch。后续导入会通过浏览器直接唤起软件，不需要在 CC-Switch 中手动新建 4i.codes 供应商。
 
-![](/assets/image/quick_start/rc-10.webp)
+#### 第二步：创建 API Key
 
-- **步骤二：**
-  - 在上方 `预设供应商` 中选择 `4i.codes` 
-  - 在 `API Key` 部分填写你在后台生成的密钥
-  - 右下角点击添加
+登录 4i.codes，进入 [API Key 管理](https://4i.codes/console/keys)，点击 `创建新 Key`。
 
-::: important
-**我们的Claude Code目前有两个渠道：**
+填写 Key 名称并选择需要使用的服务分组，然后完成创建。还不了解 Key 权限时，可以先阅读 [ApiKey 管理](/docs/quick_start/apikey.html)。
 
- - CC官渠：`https://4i.codes/claude`
- - AWSQ逆向渠道：`https://4i.codes/claude-aws`
+#### 第三步：一键导入到 CC-Switch
 
-如果你想使用不同的渠道，需要更改 `请求地址` 一栏内容
+1. 在 API Key 列表中找到刚创建的 Key。
+2. 点击该 Key 右侧的 `导入 CCS` 按钮。
+3. 浏览器询问是否打开 CC-Switch 时，选择允许。
+4. 在 CC-Switch 弹出的导入页面中确认配置，并选择 `启用该供应商`。
+
+::: tip
+导入时不需要手动填写 Base URL 或 API Key。4i.codes 会根据 Key 所属的服务分组自动生成对应的供应商配置。
 :::
 
-![](/assets/image/quick_start/rc-11.webp)
+#### 第四步：重启并测试
 
-- **步骤三：**
-  - 在主界面查看，确保目前使用的渠道是我们刚配置的
+关闭并重新打开对应的 Codex、Claude Code 或 Gemini CLI，然后发送一条简单消息。如果能够正常返回内容，说明配置已经生效。
 
-![](/assets/image/quick_start/rc-12.webp)
+### 导入规则与特殊情况
 
-- **步骤四：**
-    - 在主界面点击设置按钮，进入通用设置页面
+- OpenAI 分组会导入到 Codex。
+- Claude 分组会导入到 Claude Code。
+- Gemini 分组会导入到 Gemini CLI。
+- Antigravity 分组导入时，需要选择使用 Claude Code 还是 Gemini CLI。
+- 如果需要在 Claude Code 中调用 GPT 模型，还需要在 CC-Switch 中开启 `路由` 功能，将 Claude Code 的请求转发到对应的 GPT 模型。
 
-    - 在下方找到 `跳过Claude Code初次安装确认`，确保这项是打开的
-
-![](/assets/image/quick_start/rc-13.webp)
-
-![](/assets/image/quick_start/rc-14.webp)
-
-- **步骤四：**
-  - 打开终端，运行codex或者claude，进行简单对话，查看配置是否正常
-
-![](/assets/image/quick_start/rc-999.webp)
+::: warning
+API Key 相当于账号调用凭证。不要把完整 Key 发送给他人，也不要提交到公开代码仓库。
+:::

@@ -33,19 +33,11 @@ open "$HOME/.claude"
 这里以官渠CC作为示例，如果你想使用其他渠道，请更换 `ANTHROPIC_BASE_URL`
 :::
 
-::: important
-**我们的Claude Code目前有两个渠道：**
-
- - CC官渠：`https://4i.codes/claude`
- - AWSQ逆向渠道：`https://4i.codes/claude-aws`
-
-:::
-
 ```json
 {
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
-    "ANTHROPIC_BASE_URL": "https://4i.codes/claude", 
+    "ANTHROPIC_BASE_URL": "https://api.4i.codes",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   }
 }

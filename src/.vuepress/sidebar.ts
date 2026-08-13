@@ -76,21 +76,6 @@ export default sidebar({
           icon: "material-symbols:draw-outline",
           link: "README.md",
         },
-        {
-          text: "图片生成",
-          icon: "material-symbols:image",
-          link: "images-generations.md",
-        },
-        {
-          text: "Gemini 生成",
-          icon: "vscode-icons:file-type-gemini",
-          link: "gemini.md",
-        },
-        {
-          text: "任务查询",
-          icon: "material-symbols:manage-search",
-          link: "tasks.md",
-        },
       ],
     },
     {
