@@ -5,46 +5,60 @@ order: 3
 footer: false
 ---
 
-## Configure OpenCode
+## Connect OpenCode Desktop to 4i.codes
 
-1. Download the [OpenCode quick configuration archive](/assets/file/opencode/QuickConfiguration.zip) and extract it.
+Before you begin, create an API key for an OpenAI service group in the 4i.codes console. See [API Keys and Access](../quick_start/apikey.html) if needed.
+
+### Step 1: Download and open OpenCode
+
+Visit the [OpenCode download page](https://opencode.ai/download), install the desktop app for your operating system, and open it to reach the main screen.
 
 ![](/assets/image/extension/opencode/rc-01.webp)
 
-2. Open `opencode.json`, enter the appropriate API keys in the Gemini, Claude, and GPT sections, and save the file.
+### Step 2: Add a custom OpenAI-compatible provider
 
-::: important
-Each key must belong to the correct service group. See [API Keys and Access](/en/docs/quick_start/apikey.html).
-:::
+1. Click the current model name at the lower-left corner of the prompt box.
 
-![Gemini configuration](/assets/image/extension/opencode/rc-02.webp)
+![](/assets/image/extension/opencode/rc-02.webp)
 
-![Claude configuration](/assets/image/extension/opencode/rc-03.webp)
+2. Click `View 70+ more providers` at the bottom of the model window.
 
-![GPT configuration](/assets/image/extension/opencode/rc-04.webp)
+![](/assets/image/extension/opencode/rc-03.webp)
 
-3. Install and run OpenCode once:
+3. Select `Custom OpenAI-compatible provider` from the provider list.
 
-```bash
-npm i -g opencode-ai
-opencode
-```
+![](/assets/image/extension/opencode/rc-04.webp)
 
-4. Open the OpenCode configuration directory.
+### Step 3: Configure the custom provider
 
-::: tabs
-@tab Windows
-```bash
-start "" "%USERPROFILE%\.config\opencode"
-```
+Use the following values:
 
-@tab macOS
-```bash
-open "$HOME/.config/opencode"
-```
-:::
+- `Provider ID`: enter `4icodes`. This field accepts lowercase letters, numbers, hyphens, or underscores.
+- `Display name`: choose any name; `4i.codes` is recommended for easy identification.
+- `Base URL`: enter `https://api.4i.codes/v1`.
+- `API key`: enter the API key created in the 4i.codes console.
 
-5. Copy the edited `opencode.json` and `plugins` directory into the configuration directory.
-6. Run `opencode`, then use `/models` to confirm that the models are available.
+![](/assets/image/extension/opencode/rc-05.webp)
+
+Scroll down to the `Models` section. Click `Add model`, then enter each model ID and display name in a separate row.
+
+| Model ID | Display name |
+|---|---|
+| `gpt-5.6-sol` | `GPT-5.6 Sol` |
+| `gpt-5.6-terra` | `GPT-5.6 Terra` |
+| `gpt-5.6-luna` | `GPT-5.6 Luna` |
+| `gpt-5.5` | `GPT-5.5` |
+
+![](/assets/image/extension/opencode/rc-06.webp)
+
+After adding the models, scroll down and click `Submit`.
+
+### Step 4: Test the model connection
+
+After submitting the provider, select one of the models you just added from the lower-left corner of the prompt box and send a simple test message. If the model replies normally, 4i.codes has been connected to OpenCode successfully.
 
 ![](/assets/image/extension/opencode/rc-07.webp)
+
+::: warning
+An API key grants access to your account balance. Never share a complete key or commit it to a public repository.
+:::

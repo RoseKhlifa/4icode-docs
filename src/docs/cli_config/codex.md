@@ -6,7 +6,7 @@ footer: false
 ---
 
 :::tip
-**强烈建议使用 [CC-Switch](/docs/cli_config/ccs.html) 来进行配置，小白友好！（点击跳转）**
+**强烈建议使用 [CC-Switch](ccs.html) 来进行配置，小白友好！（点击跳转）**
 :::
 
 1. Codex 安装
@@ -58,17 +58,17 @@ open "$HOME/.codex"
 
 @tab config.toml
 
-```json
-model_provider = "rightcode"
-model = "gpt-5.6-sol"
+```toml
+model_provider = "4icode"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 network_access = "enabled"
 disable_response_storage = true
 windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
 
-[model_providers.rightcode]
-name = "rightcode"
+[model_providers.4icode]
+name = "4i.codes"
 base_url = "https://api.4i.codes"
 wire_api = "responses"
 requires_openai_auth = true
@@ -90,9 +90,9 @@ requires_openai_auth = true
 
 :::warning CLI 模型提醒
 - CLI 版本启动后，尽量不要在会话里切换模型。
-- 如果你切换过模型，需要重新用下面命令启动，才会继续使用 `gpt-5.6-sol`：
+- 如果你切换过模型，需要重新用下面命令启动，才会继续使用 `gpt-5.5`：
 ```bash
-codex -m gpt-5.6-sol -c model_reasoning_effort="xhigh"
+codex -m gpt-5.5 -c model_reasoning_effort="xhigh"
 ```
 :::
 
@@ -101,5 +101,3 @@ codex -m gpt-5.6-sol -c model_reasoning_effort="xhigh"
 - 怎么重启：先 `Ctrl + C` 退出当前 `codex`，再重新运行 `codex`。
 - 适用范围：VSCode 插件版 Codex 和 Codex App 同样适用这套配置。
 :::
-
-![](/assets/image/cli_config/rc-4.webp)

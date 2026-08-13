@@ -10,7 +10,7 @@ footer: false
 Cherry Studio supports OpenAI-compatible APIs and can connect directly to 4i.codes.
 
 ::: important
-Create a 4i.codes API key before you begin. See [API Keys and Access](/en/docs/quick_start/apikey.html).
+Create a 4i.codes API key before you begin. See [API Keys and Access](../quick_start/apikey.html).
 :::
 
 1. Open Cherry Studio, select **Settings**, and open **Model Services**.
@@ -25,7 +25,7 @@ Create a 4i.codes API key before you begin. See [API Keys and Access](/en/docs/q
 
 ![Configure the provider](/assets/image/extension/cherrystudio/provider-config.png)
 
-4. Click **Get model list** and select an available model, such as `gpt-5.6-sol`.
+4. Click **Get model list** and select an available model, such as `gpt-5.5`.
 
 ![Select a model](/assets/image/extension/cherrystudio/select-model.png)
 
@@ -33,7 +33,7 @@ Create a 4i.codes API key before you begin. See [API Keys and Access](/en/docs/q
 
 ![Confirm the selected model](/assets/image/extension/cherrystudio/selected-model.png)
 
-6. Return to the Cherry Studio home page, select `gpt-5.6-sol | 4i.codes`, and send a short test message.
+6. Return to the Cherry Studio home page, select `gpt-5.5 | 4i.codes`, and send a short test message.
 
 ![Test the connection](/assets/image/extension/cherrystudio/chat-test.png)
 

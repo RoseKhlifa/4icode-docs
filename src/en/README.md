@@ -10,9 +10,9 @@ footer: false
 
 Use one API key to connect to GPT, Claude, Gemini, Grok, and other leading models through OpenAI- and Anthropic-compatible APIs.
 
-- [Get started](/en/docs/quick_start/intro.html)
-- [Review all API endpoints](/en/docs/api/)
-- [Configure terminal tools](/en/docs/cli_config/ccs.html)
+- [Get started](docs/quick_start/intro.html)
+- [Review all API endpoints](docs/api/)
+- [Configure terminal tools](docs/cli_config/ccs.html)
 - [Check service status](https://4i.codes/status)
 
 ## What you can do

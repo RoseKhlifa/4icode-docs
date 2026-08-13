@@ -6,7 +6,7 @@ footer: false
 ---
 
 ::: tip
-For the easiest setup, use [CC-Switch](/en/docs/cli_config/ccs.html).
+For the easiest setup, use [CC-Switch](ccs.html).
 :::
 
 ## 1. Install Codex
@@ -49,16 +49,16 @@ Create `config.toml` and `auth.json` with the following content.
 ::: tabs
 @tab config.toml
 ```toml
-model_provider = "rightcode"
-model = "gpt-5.6-sol"
+model_provider = "4icode"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 network_access = "enabled"
 disable_response_storage = true
 windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
 
-[model_providers.rightcode]
-name = "rightcode"
+[model_providers.4icode]
+name = "4i.codes"
 base_url = "https://api.4i.codes"
 wire_api = "responses"
 requires_openai_auth = true
@@ -78,10 +78,8 @@ Put your 4i.codes API key in `OPENAI_API_KEY`, save both files, and run `codex`.
 Avoid switching models inside an active CLI session. If you switched models, restart with:
 
 ```bash
-codex -m gpt-5.6-sol -c model_reasoning_effort="xhigh"
+codex -m gpt-5.5 -c model_reasoning_effort="xhigh"
 ```
 :::
 
 Restart Codex after every change to `config.toml` or `auth.json`. The same configuration applies to the VS Code extension and Codex app.
-
-![](/assets/image/cli_config/rc-4.webp)

@@ -10,7 +10,7 @@ footer: false
 CherryStudio 支持 OpenAI 兼容接口，可以直接接入 4i.codes 的 Codex Pro 地址使用。
 
 :::important
-开始前请先准备好 4i.codes 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/quick_start/apikey.html) 生成。
+开始前请先准备好 4i.codes 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](../quick_start/apikey.html) 生成。
 :::
 
 1. 打开 CherryStudio，点击左下角设置按钮，进入 `模型服务` 页面。
