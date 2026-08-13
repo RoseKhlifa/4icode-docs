@@ -84,11 +84,9 @@ xdg-open "$HOME/.hermes"
 model:
   provider: custom
   default: gpt-5.4-xhigh
-  base_url: https://4i.codes/codex/v1
+  base_url: https://api.4i.codes
   api_mode: chat_completions
 ```
-
-<img width="412" height="141" alt="image" src="https://github.com/user-attachments/assets/9b0e4e4f-b22a-4df9-8768-068cd5ccbe03" />
 
 可以直接这样理解：
 
@@ -109,7 +107,7 @@ OPENAI_API_KEY=你的 4i.codes Key
 ## 第三步：打上缓存兼容补丁（暂时只支持GPT Codex组）
 
 这一步可以简单理解成：
-把 Hermes 调整得更适合 4i.codes 这类 `/codex` 接口。
+把 Hermes 调整得更适合 4i.codes 的统一 API 接口。
 
 先找一个你平时放项目的目录，然后运行：
 

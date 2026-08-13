@@ -13,23 +13,16 @@ CherryStudio 支持 OpenAI 兼容接口，可以直接接入 4i.codes 的 Codex 
 开始前请先准备好 4i.codes 的 ApiKey。如果还没有 Key，可以先参考 [ApiKey 管理](/docs/quick_start/apikey.html) 生成。
 :::
 
-1. 打开 CherryStudio，点击右上角设置按钮，进入 `模型服务` 页面。
+1. 打开 CherryStudio，点击左下角设置按钮，进入 `模型服务` 页面。
 
 ![CherryStudio 模型服务](/assets/image/extension/cherrystudio/model-services.png)
 
-2. 在模型服务列表底部点击 `添加`，新增一个提供商。
-
-弹窗中按下面填写：
-
-- `提供商名称`：`4i.codes`
-- `提供商类型`：`New Api`
-
-![添加 4i.codes 提供商](/assets/image/extension/cherrystudio/add-provider.png)
+2. 在模型服务列表底部点击 `添加`。
 
 3. 进入刚创建的 `4i.codes` 提供商，填写 API 配置。
 
 - `API 密钥`：填写你的 4i.codes ApiKey
-- `API 地址`：`https://www.4i.codes/codex-pro/v1`
+- `API 地址`：`https://api.4i.codes`
 
 ![配置 4i.codes 提供商](/assets/image/extension/cherrystudio/provider-config.png)
 
